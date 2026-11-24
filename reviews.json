@@ -1,0 +1,36 @@
+{
+  "aggiornato": "2026-11-19",
+  "voto": 4.9,
+  "totale": 278,
+  "link": "https://www.google.com/maps/search/?api=1&query=Pizza+Napoli+Via+Frejus+127%2FA+Torino&query_place_id=ChIJ9yak4kdtiEcRpXrp-svs3GU",
+  "recensioni": [
+    {
+      "autore": "Cliente Google",
+      "stelle": 5,
+      "testo": "Impasto morbido e croccante allo stesso tempo, ingredienti di qualità e personale gentilissimo. Una delle migliori pizzerie di Torino.",
+      "tradotta": true,
+      "quando": ""
+    },
+    {
+      "autore": "Cliente Google",
+      "stelle": 5,
+      "testo": "La Toscanella è da 10! Al telefono ho chiesto di togliere la carne e di tagliarla a spicchi: gentilissimi, e parlano anche inglese.",
+      "tradotta": true,
+      "quando": ""
+    },
+    {
+      "autore": "Cliente Google",
+      "stelle": 5,
+      "testo": "Trovata per caso durante un viaggio in moto: una vera pizza che profuma d'Italia, e a meno di 10 euro.",
+      "tradotta": true,
+      "quando": ""
+    },
+    {
+      "autore": "Cliente Google",
+      "stelle": 5,
+      "testo": "Non potete immaginare il profumo di questa pizza con il fior di latte. Dovete provarla.",
+      "tradotta": true,
+      "quando": ""
+    }
+  ]
+}

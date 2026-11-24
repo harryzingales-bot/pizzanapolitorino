@@ -1,0 +1,863 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pizza Napoli · Pizzeria napoletana a Torino, Via Frejus</title>
+<meta name="description" content="Pizza Napoli, pizzeria napoletana con forno a legna in Via Frejus 127/A a Torino. Menù, speciali del mese, asporto e consegna a domicilio: ordina su WhatsApp.">
+<link rel="canonical" href="https://pizzanapolitorino.it/">
+<meta property="og:type" content="restaurant">
+<meta property="og:title" content="Pizza Napoli · Pizzeria napoletana a Torino">
+<meta property="og:description" content="Forno a legna, speciali del mese, asporto e consegna. Ordina su WhatsApp.">
+<meta property="og:image" content="https://pizzanapolitorino.it/img/anteprima.jpg">
+<meta property="og:url" content="https://pizzanapolitorino.it/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%232F3E9E'/%3E%3Cpath d='M8 40c6-10 14-20 24-20 5 0 8 3 12 3s7-3 12-3' fill='none' stroke='white' stroke-width='4' stroke-linecap='round'/%3E%3Cpath d='M14 46h36' stroke='%23F4C431' stroke-width='5' stroke-linecap='round'/%3E%3C/svg%3E">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Restaurant","name":"Pizza Napoli","servesCuisine":"Pizza napoletana","telephone":"+39 345 681 1577","address":{"@type":"PostalAddress","streetAddress":"Via Frejus 127/A","postalCode":"10139","addressLocality":"Torino","addressCountry":"IT"},"openingHours":["Mo-Th 18:00-23:00","Fr-Su 18:00-23:30"],"url":"https://pizzanapolitorino.it/"}</script>
+
+<meta name="theme-color" content="#2F3E9E">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Josefin+Sans:wght@600;700&family=Chewy&family=Instrument+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#2F3E9E; --bg2:#26348C; --bg3:#1E2A78; --cream:#FFFFFF; --mute:#C5CCF2; --line:#4C5BB8; --sign:#2F3E9E; --sign-d:#1A2566;
+  --red:#E0412E; --yel:#F4C431; --blue:#9DB9FF; --green:#3AA35B; --orange:#F08A2B;
+  --head:"Bricolage Grotesque",system-ui,sans-serif; --sans:"Instrument Sans",system-ui,sans-serif;
+  --r:22px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:80px}
+body{font-family:var(--sans);color:var(--cream);background:var(--bg);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit} img{display:block;max-width:100%}
+button,input,select,textarea{font:inherit;color:inherit}
+button{cursor:pointer;border:0;background:none}
+.wrap{width:min(1180px,92vw);margin-inline:auto}
+h1,h2,h3{font-family:var(--head);font-weight:800;line-height:1;letter-spacing:-.02em}
+h2{font-size:clamp(38px,5.6vw,66px);margin:.2em 0 .3em}
+h2 em{font-style:normal;font-family:"Chewy",var(--head);font-weight:400;letter-spacing:0;color:#fff;background:var(--wave) left bottom/auto 12px repeat-x;padding-bottom:.14em}
+.eyebrow{font-weight:700;font-size:13px;letter-spacing:.22em;text-transform:uppercase;color:var(--yel);display:inline-flex;gap:8px;align-items:center}
+.eyebrow i{display:inline-flex;gap:3px}.eyebrow i b{width:8px;height:8px;display:block;transform:rotate(18deg)}
+.lead{color:var(--mute);max-width:56ch}
+section{padding:100px 0}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:15px 24px;border-radius:14px;font-weight:700;text-decoration:none;font-size:16px;transition:transform .25s,background .25s,color .25s,box-shadow .25s}
+.btn svg{width:20px;height:20px;flex:none}
+.btn-main{background:#fff;color:var(--sign);box-shadow:0 6px 0 var(--sign-d)}
+.btn-main:hover{transform:translateY(-3px);box-shadow:0 9px 0 var(--sign-d)}
+.btn-ghost{border:1.5px solid var(--line);background:var(--bg2)} .btn-ghost:hover{border-color:var(--cream)}
+.btn-y{background:var(--yel);color:#1a1a1a} .btn-y:hover{transform:translateY(-3px)}
+
+[data-reveal]{opacity:0;transform:translateY(30px);transition:opacity .9s cubic-bezier(.2,.7,.2,1),transform .9s cubic-bezier(.2,.7,.2,1)}
+[data-reveal].in{opacity:1;transform:none}
+[data-d="1"]{transition-delay:.12s}[data-d="2"]{transition-delay:.24s}[data-d="3"]{transition-delay:.36s}
+.split .w{display:inline-block;overflow:hidden;vertical-align:top;padding-bottom:.08em}
+.split .w>span{display:inline-block;transform:translateY(105%);transition:transform .8s cubic-bezier(.2,.8,.2,1)}
+.split.in .w>span{transform:none}
+
+.ph{position:relative;overflow:hidden;background:linear-gradient(135deg,#3445A6,#25338A)}
+.ph>img{width:100%;height:100%;object-fit:cover}
+.ph-miss{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;color:var(--yel);text-align:center;padding:16px;font-weight:700;font-size:14px;background:repeating-linear-gradient(45deg,transparent 0 14px,rgba(255,255,255,.03) 14px 28px)}
+.ph-miss small{font-weight:500;color:var(--mute);max-width:28ch}
+.pizza-svg{width:100%;height:100%;display:block}
+
+.topbar{background:var(--sign-d);color:var(--mute);font-size:14px}
+.topbar .wrap{display:flex;justify-content:space-between;align-items:center;padding:8px 0;gap:14px}
+.status{display:inline-flex;align-items:center;gap:8px;font-weight:500;color:var(--cream)}
+.dot{width:9px;height:9px;border-radius:50%;background:#58C26A;animation:pulse 2s infinite}
+.status.closed .dot{background:var(--red);animation:none}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(88,194,106,.6)}70%{box-shadow:0 0 0 9px rgba(88,194,106,0)}100%{box-shadow:0 0 0 0 rgba(88,194,106,0)}}
+.topbar a{text-decoration:none}
+
+header.nav{position:sticky;top:0;z-index:40;background:rgba(38,52,140,.92);backdrop-filter:blur(12px);border-bottom:1px solid transparent;transition:border-color .3s}
+header.nav.scrolled{border-color:var(--line)}
+header.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:74px;gap:18px}
+.brand{color:var(--cream);display:block;width:150px}
+.logo-svg{width:100%;height:auto;display:block}
+.links{display:flex;gap:2px}
+.links a{text-decoration:none;font-weight:500;padding:8px 14px;border-radius:10px;color:var(--mute);transition:color .25s,background .25s}
+.links a:hover{color:var(--cream)}
+.links a.active{color:var(--cream);background:var(--bg3)}
+.right{display:flex;align-items:center;gap:12px}
+/* F2 · barra di avanzamento a forma di pizza */
+.progress{width:40px;height:40px;position:relative}
+.progress svg{width:100%;height:100%;transform:rotate(-90deg)}
+.progress .sl{fill:#E7B46A;opacity:.12;transition:opacity .25s}
+.progress .sl.on{opacity:1}
+.progress .pep{fill:var(--red)}
+.cartbtn{position:relative;display:inline-flex;align-items:center;gap:8px;padding:10px 16px;border-radius:12px;font-weight:700;background:var(--cream);color:#1a1a1a;transition:transform .2s}
+.cartbtn:hover{transform:translateY(-2px)}
+.cartbtn svg{width:20px;height:20px}
+.cartbtn .n{background:var(--red);color:#fff;border-radius:999px;min-width:24px;height:24px;display:grid;place-items:center;font-size:13px;padding:0 6px}
+.bump{animation:bump .5s}
+@keyframes bump{30%{transform:scale(1.2)}60%{transform:scale(.94)}}
+
+/* hero con il forno illustrato (F2 · fiamme e vapore) */
+.hero{padding:60px 0 40px;position:relative;overflow:hidden}
+.hero::before{content:"";position:absolute;width:700px;height:700px;right:-120px;top:-80px;background:radial-gradient(circle,rgba(240,138,43,.28),transparent 60%);pointer-events:none}
+.hero .wrap{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center;position:relative}
+.hero h1{font-size:clamp(52px,7.4vw,104px);margin:16px 0 18px}
+.hero h1 em{font-style:normal;display:block;background:linear-gradient(90deg,var(--red),var(--orange),var(--yel));-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero .lead{font-size:19px}
+.ctas{display:flex;gap:14px;flex-wrap:wrap;margin:30px 0 30px}
+.facts{display:flex;gap:30px;flex-wrap:wrap}
+.facts div{font-size:14px;color:var(--mute)} .facts b{display:block;font-family:var(--head);font-size:30px;color:var(--cream)}
+.oven{width:100%;max-width:560px;justify-self:end}
+.oven svg{width:100%;height:auto;display:block;overflow:visible}
+.flame{transform-origin:250px 345px;animation:flick 1.1s ease-in-out infinite alternate}
+.flame.f2{animation-duration:.8s;animation-delay:-.3s}.flame.f3{animation-duration:1.4s;animation-delay:-.6s}
+@keyframes flick{0%{transform:scale(1,.86) skewX(-3deg)}50%{transform:scale(.94,1.06) skewX(2deg)}100%{transform:scale(1.04,.94) skewX(-1deg)}}
+.glow{animation:glow 2.4s ease-in-out infinite alternate}
+@keyframes glow{to{opacity:.55}}
+.smoke{animation:smoke 4.5s linear infinite;opacity:0}
+.smoke.s2{animation-delay:1.5s}.smoke.s3{animation-delay:3s}
+@keyframes smoke{0%{transform:translate(0,0) scale(.6);opacity:0}15%{opacity:.5}100%{transform:translate(22px,-120px) scale(2.2);opacity:0}}
+.mosaic-strip{height:28px;width:100%;display:block}
+
+/* striscia */
+.marquee{overflow:hidden;padding:18px 0;border-block:1px solid var(--line)}
+.track{display:flex;gap:44px;width:max-content;animation:mq 38s linear infinite;font-family:var(--head);font-size:26px;font-weight:700;white-space:nowrap;color:var(--cream)}
+.track span::after{content:"";display:inline-block;width:12px;height:12px;margin-left:44px;background:var(--yel);transform:rotate(20deg)}
+.track span:nth-child(3n+2)::after{background:var(--red)}.track span:nth-child(3n)::after{background:var(--blue)}
+@keyframes mq{to{transform:translateX(-50%)}}
+
+/* speciali */
+.specials{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:46px}
+.sp{background:var(--bg2);border-radius:var(--r);overflow:hidden;border:1px solid var(--line);display:flex;flex-direction:column;transition:transform .4s,border-color .4s}
+.sp:hover{transform:translateY(-8px);border-color:#4a4b58}
+.sp .top{position:relative;padding:30px 30px 0;background:linear-gradient(180deg,var(--bg3),var(--bg2))}
+.sp .top canvas,.sp .top .msc{position:absolute;inset:0 0 auto 0;height:10px;width:100%}
+.sp .big{position:absolute;right:20px;top:18px;font-family:var(--head);font-size:84px;line-height:1;color:rgba(255,255,255,.06)}
+.sp .ph{width:82%;aspect-ratio:1;margin:0 auto -30px;border-radius:50%;background:none;filter:drop-shadow(0 22px 24px rgba(0,0,0,.6));transition:transform 1.2s cubic-bezier(.2,.7,.2,1)}
+.sp:hover .ph{transform:rotate(40deg) scale(1.03)}
+.sp .bd{padding:46px 30px 28px;display:flex;flex-direction:column;flex:1}
+.sp .tag{align-self:flex-start;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:5px 10px;border-radius:8px;background:rgba(244,196,49,.12);color:var(--yel)}
+.sp h3{font-size:38px;margin:12px 0 6px}
+.sp p{color:var(--mute);font-size:15px}
+.sp .ing{font-size:13px;color:#7F7D8C;margin:12px 0 18px}
+.sp .ft{margin-top:auto;display:flex;justify-content:space-between;align-items:center}
+.sp .pr{font-family:var(--head);font-size:36px;font-weight:800}
+.sp-note{display:flex;align-items:center;gap:12px;margin-top:30px;color:var(--mute);font-size:15px}
+.sp-note b{color:var(--cream)}
+
+/* offerta */
+.offer{border-radius:28px;padding:34px 40px;display:grid;grid-template-columns:auto 1fr auto;gap:32px;align-items:center;background:linear-gradient(110deg,#1E2A78,var(--bg2) 60%);border:1.5px dashed rgba(255,255,255,.45);position:relative;overflow:hidden}
+.offer .pz{width:130px;height:130px}
+.offer .when{color:var(--orange);font-weight:700;letter-spacing:.14em;text-transform:uppercase;font-size:13px}
+.offer h3{font-size:clamp(28px,3.6vw,42px)}
+.offer .pr{font-family:var(--head);font-size:76px;font-weight:800;color:var(--yel);line-height:1}
+.badge{position:absolute;right:220px;top:-14px;width:110px;height:110px;opacity:.9}
+.badge svg{animation:spin 18s linear infinite;width:100%;height:100%}
+@keyframes spin{to{transform:rotate(360deg)}}
+
+/* F2 · galleria inclinata che scorre */
+.gallery{overflow:hidden;padding:30px 0 10px}
+.grow{display:flex;gap:22px;width:max-content;will-change:transform;margin-bottom:22px}
+.grow .card{width:300px;aspect-ratio:4/3;border-radius:18px;overflow:hidden;transform:rotate(-3deg);flex:none;border:1px solid var(--line);position:relative}
+.grow .card:nth-child(even){transform:rotate(2.5deg) translateY(14px)}
+.grow .card .ph{width:100%;height:100%}
+.grow .card.pz .ph{background:var(--bg3);padding:16px}
+.grow .card span.cap{position:absolute;left:12px;bottom:12px;background:rgba(20,21,27,.8);padding:5px 10px;border-radius:8px;font-size:13px;font-weight:700}
+
+/* menù */
+.tabs{display:flex;gap:8px;flex-wrap:wrap;margin:30px 0 30px}
+.tab{padding:11px 18px;border-radius:12px;border:1.5px solid var(--line);font-weight:700;color:var(--mute);transition:all .25s}
+.tab:hover{color:var(--cream);border-color:#555}
+.tab[aria-selected="true"]{background:var(--cream);color:#1a1a1a;border-color:var(--cream)}
+.panel{display:none}.panel.on{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.panel.on>*{animation:fadeup .5s both}
+.panel.on>*:nth-child(2){animation-delay:.05s}.panel.on>*:nth-child(3){animation-delay:.1s}.panel.on>*:nth-child(4){animation-delay:.15s}.panel.on>*:nth-child(5){animation-delay:.2s}.panel.on>*:nth-child(6){animation-delay:.25s}
+@keyframes fadeup{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+.mi{background:var(--bg2);border:1px solid var(--line);border-radius:18px;padding:20px;display:grid;grid-template-columns:86px 1fr;gap:16px;align-items:start;transition:border-color .25s}
+.mi:hover{border-color:#4a4b58}
+.mi .ph{width:86px;height:86px;border-radius:50%;background:none}
+.mi .drink{width:86px;height:86px;border-radius:50%;background:var(--bg3);display:grid;place-items:center;color:var(--yel)}
+.mi .drink svg{width:34px}
+.mi h4{font-family:var(--head);font-size:21px;font-weight:700;line-height:1.1}
+.mi .d{font-size:13.5px;color:var(--mute);margin:6px 0 12px}
+.mi .ft{display:flex;justify-content:space-between;align-items:center}
+.mi .p{font-family:var(--head);font-size:22px;font-weight:800;color:var(--yel)}
+.add{height:36px;padding:0 14px;border-radius:10px;background:var(--bg3);font-weight:700;font-size:14px;transition:background .2s,color .2s}
+.add:hover{background:var(--cream);color:#1a1a1a}
+.add.ok{background:var(--green);color:#fff}
+.veg{display:inline-block;font-size:10px;font-weight:700;color:#7CD48F;border:1px solid #3F7A4C;border-radius:6px;padding:0 5px;margin-left:6px;vertical-align:middle;font-family:var(--sans)}
+.componi{grid-column:1/-1;background:linear-gradient(120deg,var(--bg3),var(--bg2));border:1px solid var(--line);border-radius:var(--r);padding:30px;display:grid;grid-template-columns:auto 1fr;gap:30px;align-items:center}
+.componi .big{font-family:var(--head);font-size:80px;font-weight:800;color:var(--yel);line-height:1}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 18px}
+.chip{border:1.5px solid var(--line);border-radius:10px;padding:8px 14px;font-weight:500;font-size:15px;transition:all .2s;background:var(--bg)}
+.chip:hover{border-color:#666}
+.chip[aria-pressed="true"]{background:var(--yel);border-color:var(--yel);color:#1a1a1a;font-weight:700}
+.menu-note{margin-top:22px;font-size:14px;color:var(--mute)}
+
+/* recensioni */
+#recensioni{background:var(--bg2)}
+.rev-head{display:flex;justify-content:space-between;align-items:end;gap:20px;flex-wrap:wrap}
+.score{display:flex;align-items:center;gap:14px}
+.score b{font-family:var(--head);font-size:70px;font-weight:800;line-height:1}
+.slices{display:flex;gap:4px}.slice{width:22px;height:22px}
+.reviews{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:40px}
+.rev{background:var(--bg);border:1px solid var(--line);border-radius:var(--r);padding:24px;font-size:15px;color:#D9D5CC}
+.rev small{display:block;margin-top:14px;color:var(--mute);font-weight:700;font-size:12px;letter-spacing:.08em;text-transform:uppercase}
+.rev-note{margin-top:14px;font-size:13px;color:var(--mute)}
+
+/* ordina */
+.order{display:grid;grid-template-columns:1.2fr .8fr;gap:22px;margin-top:40px}
+.card2{background:var(--bg2);border:1px solid var(--line);border-radius:var(--r);padding:32px}
+.card2 h3{font-size:30px;display:flex;gap:12px;align-items:center}
+.card2 h3 svg{width:30px;height:30px;color:var(--yel)}
+.card2 p{color:var(--mute);margin:6px 0 20px}
+.steps{list-style:none;display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:24px}
+.steps li{background:var(--bg);border:1px solid var(--line);border-radius:14px;padding:14px;font-size:14px;color:var(--mute)}
+.steps li b{display:block;font-family:var(--head);font-size:28px;color:var(--cream)}
+.apps{display:grid;gap:10px}
+.app{display:flex;justify-content:space-between;padding:14px 16px;border:1.5px solid var(--line);border-radius:12px;text-decoration:none;font-weight:700;transition:border-color .2s,transform .2s}
+.app:hover{border-color:var(--cream);transform:translateX(4px)}
+
+/* dove */
+.where{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:stretch}
+.info{display:grid;gap:18px;margin-top:20px}
+.info div{display:flex;gap:14px;align-items:flex-start}
+.info svg{width:24px;height:24px;color:var(--yel);flex:none;margin-top:3px}
+.info b{display:block} .info span span{color:var(--mute)}
+.mapcard{border-radius:var(--r);overflow:hidden;position:relative;min-height:340px;border:1px solid var(--line);text-decoration:none;display:block}
+.mapcard svg{position:absolute;inset:0;width:100%;height:100%}
+.mapcard .go{position:absolute;left:20px;bottom:20px;background:var(--cream);color:#1a1a1a;padding:12px 18px;border-radius:12px;font-weight:700}
+
+footer{background:var(--sign-d);color:var(--mute);padding:50px 0 110px;font-size:14px}
+footer .wrap{display:flex;justify-content:space-between;gap:30px;flex-wrap:wrap;align-items:center}
+footer .brand{width:170px}
+footer a{text-decoration:none}
+
+/* carrello */
+.scrim{position:fixed;inset:0;background:rgba(0,0,0,.6);opacity:0;pointer-events:none;transition:opacity .3s;z-index:60}
+.scrim.on{opacity:1;pointer-events:auto}
+.drawer{position:fixed;top:0;right:0;bottom:0;width:min(440px,100vw);background:var(--bg2);z-index:61;transform:translateX(105%);transition:transform .45s cubic-bezier(.2,.8,.2,1);display:flex;flex-direction:column;border-left:1px solid var(--line)}
+.drawer.on{transform:none}
+.dr-h{display:flex;justify-content:space-between;align-items:center;padding:20px 22px;border-bottom:1px solid var(--line)}
+.dr-h h3{font-size:30px}
+.dr-h button{font-size:30px;line-height:1;width:40px;height:40px}
+.dr-b{flex:1;overflow:auto;padding:16px 22px}
+.empty{text-align:center;color:var(--mute);padding:40px 10px}
+.empty .pz{width:120px;height:120px;margin:0 auto 14px;opacity:.5}
+.line{display:grid;grid-template-columns:1fr auto;gap:6px 12px;padding:12px 0;border-bottom:1px solid var(--line)}
+.line .nm{font-weight:700}
+.line .lt{font-family:var(--head);font-weight:800;font-size:20px;text-align:right}
+.stepper{display:inline-flex;align-items:center;border:1.5px solid var(--line);border-radius:10px;overflow:hidden;justify-self:start}
+.stepper button{width:34px;height:32px;font-size:20px}
+.stepper button:hover{background:var(--bg3)}
+.stepper span{min-width:28px;text-align:center;font-weight:700}
+.dr-f{padding:16px 22px 22px;border-top:1px solid var(--line);display:grid;grid-template-columns:minmax(0,1fr);gap:12px;background:var(--bg)}
+.dr-f *{min-width:0}
+.dr-f label{display:grid;gap:4px;font-weight:700;font-size:13px;color:var(--mute)}
+.dr-f input,.dr-f select{width:100%;border:1.5px solid var(--line);border-radius:10px;padding:10px 12px;background:var(--bg2);font-size:15px;color:var(--cream)}
+.dr-f .row{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.tot{display:flex;justify-content:space-between;align-items:baseline;font-weight:700}
+.tot b{font-family:var(--head);font-size:34px;font-weight:800;color:var(--yel)}
+.dr-f .hint{font-size:13px;color:var(--mute)}
+.toast{position:fixed;left:50%;bottom:96px;transform:translate(-50%,30px);background:var(--cream);color:#1a1a1a;padding:12px 20px;border-radius:12px;font-weight:700;opacity:0;transition:all .35s;z-index:70;pointer-events:none}
+.toast.on{opacity:1;transform:translate(-50%,0)}
+
+.mbar{display:none}
+@media (max-width:960px){
+  .links{display:none}
+  .hero .wrap,.where,.order{grid-template-columns:1fr}
+  .oven{justify-self:center;max-width:440px}
+  .specials{grid-template-columns:1fr;max-width:460px;margin-inline:auto}
+  .panel.on{grid-template-columns:1fr 1fr}
+  .reviews{grid-template-columns:1fr 1fr}
+  .offer{grid-template-columns:1fr;text-align:center;justify-items:center}.badge{display:none}
+  .cartbtn .lbl{display:none}
+  .mbar{display:grid;grid-template-columns:repeat(3,1fr);position:fixed;left:10px;right:10px;bottom:10px;z-index:50;background:var(--bg3);border:1px solid var(--line);border-radius:18px;padding:6px;box-shadow:0 14px 30px -10px rgba(0,0,0,.7)}
+  .mbar a,.mbar button{display:grid;justify-items:center;gap:2px;text-decoration:none;font-size:12px;font-weight:700;padding:8px 0;border-radius:12px;position:relative}
+  .mbar button{background:var(--red);color:#fff}
+  .mbar svg{width:22px;height:22px}
+  .mbar .n{position:absolute;top:2px;right:22%;background:var(--yel);color:#1a1a1a;border-radius:999px;min-width:20px;height:20px;font-size:11px;display:grid;place-items:center}
+  section{padding:76px 0}
+}
+@media (max-width:620px){.panel.on{grid-template-columns:1fr}.reviews{grid-template-columns:1fr}.steps{grid-template-columns:1fr}.topbar .hide-s{display:none}.componi{grid-template-columns:1fr}.grow .card{width:230px}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}[data-reveal],.split .w>span{opacity:1;transform:none}}
+
+/* ===== stile dell'insegna: blu, bianco e disegni a gesso ===== */
+body{background:var(--sign)}
+.doodle-bg{background-image:var(--doodle);background-size:360px;background-repeat:repeat}
+.doodle-bg.soft{background-color:var(--bg2)}
+.hero{padding:96px 0 50px}
+.hero::before{opacity:.8}
+.sign{margin:14px 0 22px;line-height:.9;display:grid;justify-items:start}
+.sign .s1{font-family:"Josefin Sans",sans-serif;font-weight:700;font-size:clamp(46px,6vw,84px);letter-spacing:.24em;padding-left:.06em}
+.sign .wave{width:min(100%,420px);height:30px;margin:4px 0 -2px}
+.sign .wave path{fill:none;stroke:#fff;stroke-width:5;stroke-linecap:round;stroke-dasharray:1;stroke-dashoffset:1;transition:stroke-dashoffset 1.4s .5s cubic-bezier(.6,.1,.3,1)}
+.sign .s2{font-family:"Chewy",cursive;font-weight:400;font-size:clamp(84px,11vw,150px);letter-spacing:.01em;line-height:.95}
+.sign .l{display:inline-block;opacity:0;transform:translateY(40%) rotate(-6deg);transition:opacity .5s,transform .7s cubic-bezier(.3,1.6,.5,1)}
+.sign.in .l{opacity:1;transform:none}
+.sign .s2 .l:nth-child(even){--r:4deg}
+.sign.in .s2 .l{transform:rotate(var(--r,-3deg))}
+.sign.in .wave path{stroke-dashoffset:0}
+.lights{position:absolute;left:0;top:0;width:100%;height:64px;pointer-events:none;z-index:2}
+.bulb{fill:#FFE9A8;filter:drop-shadow(0 0 6px rgba(255,214,120,.9));animation:twinkle 2.6s ease-in-out infinite alternate}
+@keyframes twinkle{0%{opacity:1}70%{opacity:.95}100%{opacity:.45;filter:none}}
+.hero-doodles{position:absolute;inset:0;pointer-events:none}
+.hero-doodles svg{position:absolute;stroke:#fff;fill:none;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round;opacity:.42}
+.hero-doodles svg *{stroke-dasharray:1;stroke-dashoffset:1;animation:chalk 2.2s ease forwards}
+@keyframes chalk{to{stroke-dashoffset:0}}
+.eyebrow{color:#fff} .eyebrow i b{outline:1px solid rgba(255,255,255,.3)}
+.lead{color:var(--mute)}
+.brand .logo-sign{width:100%;height:auto;display:block}
+.sp,.mi,.card2,.rev{background:rgba(26,37,102,.55);border-color:rgba(255,255,255,.16)}
+.sp .top{background:linear-gradient(180deg,rgba(255,255,255,.08),transparent)}
+.sp .big{color:rgba(255,255,255,.1);font-family:"Chewy",cursive;font-weight:400}
+.sp h3,.componi h3{font-family:"Chewy",cursive;font-weight:400;letter-spacing:.01em}
+.sp h3{font-size:44px}
+.mi h4{font-family:"Josefin Sans",sans-serif;font-weight:700;font-size:19px;text-transform:uppercase;letter-spacing:.04em}
+.tab[aria-selected="true"]{color:var(--sign)}
+.chip{background:rgba(255,255,255,.06)}
+.app,.steps li,.dr-f input,.dr-f select{background:rgba(255,255,255,.06)}
+.steps li{border-color:rgba(255,255,255,.16)}
+.btn-ghost{background:transparent;border:1.5px solid rgba(255,255,255,.55)} .btn-ghost:hover{background:#fff;color:var(--sign);border-color:#fff}
+.add{background:rgba(255,255,255,.12)} .add:hover{background:#fff;color:var(--sign)}
+.cartbtn{color:var(--sign)}
+.score b{font-family:"Chewy",cursive;font-weight:400}
+.rev{color:#E9ECFB}
+.rev p{margin:2px 0 0}
+.drawer{background:var(--sign)} .dr-f{background:var(--bg3)}
+.mbar{background:var(--sign-d)!important}
+.mbar button{background:#fff!important;color:var(--sign)!important}
+.toast{color:var(--sign)}
+.mapcard{border:1.5px solid rgba(255,255,255,.25)}
+#galleria .grow .card{border:3px solid #fff;box-shadow:0 18px 30px -16px rgba(0,0,0,.5)}
+@media (max-width:960px){.hero-doodles{display:none}.hero{padding-top:84px}.sign .s2{font-size:clamp(76px,22vw,120px)}.hero-doodles svg:nth-child(n+2){display:none}.hero-doodles svg:first-child{left:auto!important;right:4%;top:150px!important;width:60px!important}}
+@media (prefers-reduced-motion:reduce){.sign .l{opacity:1;transform:none}.sign .wave path,.hero-doodles svg *{stroke-dashoffset:0}}
+.offer .pz{border-radius:50%;overflow:hidden;position:relative}
+.offer .pz>img{width:100%;height:100%;object-fit:cover}
+
+/* ===== consegna, logo, allergeni (versione scelta da Badr) ===== */
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.hero-logo{margin:18px 0 22px;max-width:520px}
+.hero-logo .logo-svg.big{width:100%;height:auto;display:block;filter:drop-shadow(0 6px 0 rgba(26,37,102,.6))}
+.hero-logo .v-line{stroke-dasharray:420;stroke-dashoffset:420;animation:vdraw 2.2s .3s cubic-bezier(.6,.1,.3,1) forwards}
+@keyframes vdraw{to{stroke-dashoffset:0}}
+.forno-hero{justify-self:end;width:min(100%,440px);position:relative}
+.forno-hero .ph{aspect-ratio:4/5;border-radius:240px 240px 26px 26px;border:6px solid #fff;box-shadow:0 30px 60px -24px rgba(0,0,0,.6)}
+.brand .logo-svg{width:100%;height:auto;display:block}
+.ig-link{width:40px;height:40px;border-radius:12px;display:grid;place-items:center;border:1.5px solid rgba(255,255,255,.4);transition:background .2s}
+.ig-link:hover{background:rgba(255,255,255,.12)} .ig-link svg{width:20px;height:20px}
+.ig-cta{text-align:center;margin-top:26px} .ig-cta .btn b{font-weight:700}
+.al{font-size:12px;color:var(--mute);margin:-6px 0 12px;letter-spacing:.02em}
+.sp .al{margin:-8px 0 16px}
+.tbd{font-size:16px!important;color:var(--mute)!important;font-family:var(--sans)!important;font-weight:600!important}
+.soon{font-size:13px;font-weight:700;color:var(--yel);padding:8px 12px;border:1.5px dashed rgba(244,196,49,.6);border-radius:10px}
+.allergeni{margin-top:26px;background:rgba(26,37,102,.55);border:1px solid rgba(255,255,255,.16);border-radius:18px;padding:20px 24px}
+.allergeni h3{font-size:22px;margin-bottom:6px} .allergeni p{color:var(--mute);font-size:15px} .allergeni b{color:#fff} .allergeni a{color:var(--yel)}
+.cp-ex{grid-column:1/-1} .cp-ex p{color:var(--mute);font-size:14px;margin-bottom:10px}
+.cp-row{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.cp-row figure{margin:0;text-align:center} .cp-row .ph{aspect-ratio:1;border-radius:50%;background:none} .cp-row figcaption{font-size:13px;color:var(--mute);margin-top:8px}
+/* consegna */
+.zone-grid{display:grid;grid-template-columns:1.35fr 1fr;gap:28px;margin-top:36px;align-items:start}
+.zone-map{position:relative;aspect-ratio:16/10;border-radius:22px;overflow:hidden;border:3px solid #fff;background:#dfe5f3;box-shadow:0 24px 50px -28px rgba(0,0,0,.6)}
+.mm{touch-action:pan-y;user-select:none;-webkit-user-select:none;cursor:grab}
+.mm.mm-drag{cursor:grabbing}
+.mm-tiles{position:absolute;inset:0;filter:saturate(.35) brightness(1.04)}
+.mm-tiles img{position:absolute;left:0;top:0;width:256px;height:256px;opacity:0;transition:opacity .25s;max-width:none}
+.mm-tiles img.on{opacity:1}
+.mm.mm-off{background:repeating-linear-gradient(0deg,transparent 0 47px,rgba(30,42,120,.08) 47px 48px),repeating-linear-gradient(90deg,transparent 0 47px,rgba(30,42,120,.08) 47px 48px),#e6eaf5}
+.mm-over{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;font-family:var(--sans)}
+.mm-ctrl{position:absolute;right:10px;top:10px;display:grid;gap:6px;z-index:2}
+.mm-ctrl button{width:40px;height:40px;border-radius:10px;background:#fff;color:#1E2A78;font-size:22px;font-weight:700;box-shadow:0 4px 12px -4px rgba(0,0,0,.35)}
+.mm-attr{position:absolute;right:6px;bottom:4px;font-size:10.5px;background:rgba(255,255,255,.85);color:#333;padding:1px 6px;border-radius:4px;text-decoration:none;z-index:2}
+.mm-hint{position:absolute;inset:0;display:grid;place-items:center;background:rgba(20,28,80,.55);color:#fff;font-weight:700;font-size:15px;text-align:center;padding:20px;opacity:0;transition:opacity .25s;pointer-events:none;z-index:3}
+.mm.mm-hinting .mm-hint{opacity:1}
+.zone-side{background:rgba(26,37,102,.55);border:1px solid rgba(255,255,255,.16);border-radius:22px;padding:24px}
+.zsearch label,.zlab{display:block;font-weight:700;font-size:14px;margin-bottom:8px}
+.zrow{display:flex;gap:8px}
+.zrow input,#zquart{flex:1;min-width:0;width:100%;border:1.5px solid rgba(255,255,255,.3);background:rgba(255,255,255,.08);color:#fff;border-radius:12px;padding:12px 14px;font-size:16px}
+.zrow input::placeholder{color:#AFB7E6}
+#zquart option{color:#1a1a1a}
+.zrow .btn{padding:12px 16px}
+.zlab{margin-top:18px}
+.zres{margin-top:18px;background:#fff;color:#1E2A78;border-radius:14px;padding:14px 16px;font-size:15px;display:grid;gap:6px}
+.zres b{font-size:16px} .zres strong{font-size:18px} .zres a{color:#1E2A78;font-weight:700}
+.zres .btn{justify-self:start;margin-top:6px;background:var(--sign);color:#fff;box-shadow:none;padding:11px 16px;font-size:15px}
+.zlegend{margin-top:18px;display:grid;gap:8px}
+.zlegend div{display:grid;grid-template-columns:16px 1fr auto;gap:10px;align-items:center;font-size:15px}
+.zlegend i{width:16px;height:16px;border-radius:50%;display:block}
+.zlegend b{font-family:var(--head);font-size:18px}
+.znote{margin-top:14px;font-size:12.5px;color:var(--mute)}
+/* carrello: ritiro / consegna */
+.seg{display:grid;grid-template-columns:1fr 1fr;background:rgba(255,255,255,.08);border-radius:12px;padding:4px;gap:4px}
+.seg button{padding:10px 8px;border-radius:9px;font-weight:700;font-size:14px;color:var(--mute)}
+.seg button[aria-pressed="true"]{background:#fff;color:var(--sign)}
+.dom{display:grid;gap:10px}
+.dom[hidden],.subrow[hidden]{display:none}
+.subrow{display:flex;justify-content:space-between;font-size:14px;color:var(--mute)}
+.dr-f{max-height:72vh;overflow:auto}
+.dr-f select option{color:#1a1a1a}
+.foot-ig{display:inline-flex;align-items:center;gap:8px;text-decoration:none;color:#fff} .foot-ig svg{width:20px;height:20px}
+.legal{flex-basis:100%;font-size:12.5px;color:#9AA6E6;border-top:1px solid rgba(255,255,255,.12);padding-top:16px}
+@media (max-width:960px){
+  .forno-hero{justify-self:center;width:min(86%,380px)}
+  .hero-logo{max-width:100%}
+  .zone-grid{grid-template-columns:1fr}
+  .zone-map{aspect-ratio:1/1}
+  .ig-link{display:none}
+}
+@media (max-width:620px){.cp-row{gap:10px}.cp-row figcaption{font-size:12px}.zrow{flex-direction:column}.zrow .btn{justify-content:center}}
+@media (prefers-reduced-motion:reduce){.hero-logo .v-line{stroke-dashoffset:0}}
+
+/* logo vero, allergeni numerati, lingua */
+.hero-logo .logo-svg.big{color:#fff;filter:drop-shadow(0 5px 0 rgba(20,28,90,.55))}
+.brand .logo-svg{color:#fff}
+.alb{display:inline-flex;gap:4px;flex-wrap:wrap;vertical-align:middle}
+.alb i{font-style:normal;width:20px;height:20px;border-radius:50%;display:inline-grid;place-items:center;font-size:11px;font-weight:700;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.35);color:#fff}
+.al{display:flex;align-items:center;gap:8px;margin:-4px 0 12px;color:var(--mute);font-size:12px}
+.al-legend{list-style:none;display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:8px 16px;margin-top:14px;padding:0}
+.al-legend li{display:flex;align-items:center;gap:8px;font-size:14px;color:#E3E7FA}
+.al-legend i{font-style:normal;width:22px;height:22px;flex:none;border-radius:50%;display:grid;place-items:center;font-size:11.5px;font-weight:700;background:#fff;color:var(--sign)}
+.lang-btn{height:40px;padding:0 10px;border-radius:12px;display:inline-flex;align-items:center;gap:6px;border:1.5px solid rgba(255,255,255,.4);color:#fff;font-weight:700;font-size:13px;transition:background .2s}
+.lang-btn:hover{background:rgba(255,255,255,.12)} .lang-btn svg{width:18px;height:18px}
+.mm-fb{position:absolute;left:0;top:0;transform-origin:0 0;max-width:none;pointer-events:none}
+.nav .brand{width:112px}
+@media (max-width:960px){.ig-link{display:grid}.progress{display:none}}
+@media (max-width:420px){.nav .brand{width:96px}.lang-btn{padding:0 8px}}
+.mi-drink .drinkph{width:86px;height:114px;border-radius:14px;background:#2F3E9E}
+.mi-drink .drinkph>img{object-fit:cover}
+.drink-note{grid-column:1/-1;font-size:13px;color:var(--mute)}
+
+/* mappa delle zone disegnate */
+.zm{position:relative;overflow:hidden;touch-action:pan-y;user-select:none;-webkit-user-select:none;cursor:grab;background:#1E2A78}
+.zm.mm-drag{cursor:grabbing}
+.zm-stage{position:absolute;left:0;top:0;width:1505px;height:809px;transform-origin:0 0;transition:transform .45s cubic-bezier(.2,.8,.2,1)}
+.zm.mm-drag .zm-stage{transition:none}
+.zm-stage img,.zm-stage svg{position:absolute;inset:0;width:1505px;height:809px;max-width:none}
+.zm-zone{opacity:.30;transition:opacity .3s}
+.zm-line{fill:none;stroke:#fff;stroke-width:4;stroke-dasharray:14 9;stroke-linejoin:round;opacity:.9}
+.zm-badge text{font:700 27px var(--sans);fill:#1a1a1a}
+.zm-badge rect{stroke:#fff;stroke-width:3}
+.zm.zm-focus .zm-zone{opacity:.12}.zm.zm-focus .zm-zone.on{opacity:.5}
+.zm.zm-focus .zm-badge:not(.on){opacity:.45}
+.zm .mm-attr{pointer-events:none}
+.zlegend button{display:grid;grid-template-columns:16px 1fr auto;gap:12px;align-items:start;text-align:left;width:100%;padding:10px 12px;border-radius:12px;color:#fff;transition:background .2s}
+.zlegend button:hover{background:rgba(255,255,255,.08)}
+.zlegend button i{margin-top:4px}
+.zlegend button span{display:grid;gap:2px}.zlegend button small{font-size:12.5px;color:var(--mute);line-height:1.35}
+.zlegend button strong{font-family:var(--head);font-size:18px}
+.znote a{color:var(--yel)}
+</style>
+</head>
+<body id="top">
+
+<div class="topbar"><div class="wrap">
+  <span class="status"><span class="dot"></span><span data-status></span></span>
+  <span><span class="hide-s">Via Frejus 127/A · </span><a href="tel:+393456811577">345 681 1577</a></span>
+</div></div>
+
+<header class="nav"><div class="wrap">
+  <a class="brand" href="#top" aria-label="Pizza Napoli, torna su" data-logo></a>
+  <nav class="links" aria-label="Sezioni">
+    <a href="#speciali">Speciali</a><a href="#menu">Menù</a><a href="#consegna">Consegna</a><a href="#ordina">Ordina</a><a href="#dove">Dove siamo</a>
+  </nav>
+  <div class="right">
+    <a class="ig-link" data-ig href="#" target="_blank" rel="noopener" aria-label="Instagram di Pizza Napoli"><span data-ico="ig"></span></a>
+    <button class="lang-btn" type="button" data-lang aria-label="English version"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.6 2.6 3.9 5.6 3.9 9s-1.3 6.4-3.9 9c-2.6-2.6-3.9-5.6-3.9-9S9.4 5.6 12 3z"/></svg><b data-lang-lbl>EN</b></button>
+    <div class="progress" title="Quanto hai visto della pagina" aria-hidden="true" data-progress></div>
+    <button class="cartbtn" data-open aria-label="Apri il tuo ordine"><span data-ico="bag"></span><span class="lbl">Ordine</span><span class="n" data-count-cart>0</span></button>
+  </div>
+</div></header>
+
+<section class="hero doodle-bg">
+  <svg class="lights" data-lights aria-hidden="true"></svg>
+  <div class="hero-doodles" data-hero-doodles aria-hidden="true"></div>
+  <div class="wrap">
+    <div>
+      <div class="eyebrow" data-reveal><i><b style="background:var(--red)"></b><b style="background:var(--yel)"></b><b style="background:#fff"></b></i>Pizzeria napoletana · Via Frejus 127/A</div>
+      <h1 class="hero-logo" data-hero-logo><span class="sr">Pizza Napoli</span></h1>
+      <p class="lead" data-reveal data-d="1">Ogni sera dal nostro forno a legna a mosaico: cornicione alto e morbido, fiordilatte di Agerola e pizze nuove che nascono al banco.</p>
+      <div class="ctas" data-reveal data-d="2">
+        <a class="btn btn-main" href="#menu"><span data-ico="bag"></span>Ordina ora</a>
+        <a class="btn btn-ghost" href="#consegna"><span data-ico="scooter"></span>Consegna a casa</a>
+      </div>
+      <div class="facts" data-reveal data-d="3">
+        <div><b><span data-voto>4,9</span> ★</b><span data-totale>278</span> recensioni</div><div><b>Ogni sera</b>dalle 18:00</div><div><b>da 2 €</b>consegna a casa</div>
+      </div>
+    </div>
+    <div class="forno-hero" data-reveal="right"><div class="ph" data-img="forno" data-alt="Il forno a legna a mosaico di Pizza Napoli"></div></div>
+  </div>
+</section>
+<svg class="mosaic-strip" data-strip preserveAspectRatio="none" aria-hidden="true"></svg>
+
+<section id="speciali" class="doodle-bg soft">
+  <div class="wrap">
+    <div class="eyebrow" data-reveal><i><b style="background:var(--yel)"></b></i>Fuori menù · cambiano ogni mese</div>
+    <h2 class="split" data-split>Le speciali <em>del mese</em></h2>
+    <p class="lead" data-reveal>Molte nostre pizze nascono quasi per caso, al banco. Le migliori diventano speciali: tre alla volta, per un mese.</p>
+    <div class="specials" data-specials></div>
+  </div>
+</section>
+
+<section style="padding:20px 0 60px">
+  <div class="wrap">
+    <div class="offer" data-reveal>
+      <div class="pz" data-img="pizza-lory" data-pizza="lory" data-alt="Pizza Lory"></div>
+      <div><div class="when">Dal lunedì al giovedì</div><h3>Lory + Coca-Cola in vetro</h3><div style="color:var(--mute)">La nostra novità, con la bibita in omaggio.</div></div>
+      <div style="display:grid;gap:10px;justify-items:center"><div class="pr">12 €</div><button class="btn btn-y" data-add="offerta">Aggiungi</button></div>
+      <div class="badge" aria-hidden="true"><svg viewBox="0 0 110 110"><defs><path id="circ" d="M55 55m-42 0a42 42 0 1 1 84 0a42 42 0 1 1-84 0"/></defs><text font-family="Instrument Sans" font-weight="700" font-size="11" letter-spacing="3" fill="#F4C431"><textPath href="#circ">LUN · MAR · MER · GIO · OFFERTA · </textPath></text></svg></div>
+    </div>
+  </div>
+</section>
+
+<section id="galleria" style="padding-top:60px">
+  <div class="wrap">
+    <div class="eyebrow" data-reveal><i><b style="background:var(--red)"></b></i>Dal banco al forno</div>
+    <h2 class="split" data-split>Fatta a mano, <em>cotta a legna</em></h2>
+  </div>
+  <div class="gallery" aria-hidden="true">
+    <div class="grow" data-row="1"></div>
+    <div class="grow" data-row="-1"></div>
+  </div>
+  <div class="wrap ig-cta" data-reveal><a class="btn btn-ghost" data-ig href="#" target="_blank" rel="noopener"><span data-ico="ig"></span>Seguici su Instagram <b data-ig-nome></b></a></div>
+</section>
+
+<section id="menu">
+  <div class="wrap">
+    <div class="eyebrow" data-reveal><i><b style="background:var(--blue)"></b></i>Il menù</div>
+    <h2 class="split" data-split>Scegli <em>e ordina</em></h2>
+    <p class="lead" data-reveal>Tutte le pizze sono condite con mozzarella fiordilatte. Aggiungi quello che vuoi e invia l'ordine su WhatsApp.</p>
+    <div class="tabs" role="tablist" data-tabs></div>
+    <div data-panels></div>
+    <div class="allergeni" data-reveal>
+      <h3>Allergeni</h3>
+      <p>Il numero accanto a ogni pizza indica gli allergeni principali. Per allergie o intolleranze <b>contattaci prima di ordinare</b>: <a href="tel:+393456811577">345 681 1577</a> · <a data-wa href="#">WhatsApp</a>.</p>
+      <ol class="al-legend" data-al-legend></ol>
+    </div>
+    <p class="menu-note">Prezzi IVA inclusa.</p>
+  </div>
+</section>
+
+<section id="recensioni" class="doodle-bg soft">
+  <div class="wrap">
+    <div class="rev-head">
+      <div><div class="eyebrow" data-reveal><i><b style="background:var(--yel)"></b></i>Dicono di noi</div><h2 class="split" data-split>Una delle migliori <em>di Torino</em></h2></div>
+      <div class="score" data-reveal><b><span data-voto>4,9</span></b><div><div class="slices" data-slices></div><small style="color:var(--mute)"><span data-totale>278</span> recensioni su Google</small></div></div>
+    </div>
+    <div class="reviews" data-reviews></div>
+    <p class="rev-note">Recensioni da <a data-reviews-link href="#" target="_blank" rel="noopener">Google</a>, aggiornate automaticamente · ultimo aggiornamento <span data-aggiornato></span></p>
+  </div>
+</section>
+
+<section id="consegna" class="doodle-bg soft">
+  <div class="wrap">
+    <div class="eyebrow" data-reveal><i><b style="background:var(--yel)"></b></i>Consegna a domicilio</div>
+    <h2 class="split" data-split>Consegniamo noi, <em>da 2 €</em></h2>
+    <p class="lead" data-reveal>Portiamo le pizze a casa tua fino al centro di Torino. Il costo dipende dalla zona in cui abiti: trovala sulla mappa o scegli il tuo quartiere.</p>
+    <div class="zone-grid">
+      <div class="zone-map" data-map data-reveal></div>
+      <div class="zone-side" data-reveal data-d="1">
+        <label class="zlab" for="zquart" style="margin-top:0">Dove abiti?</label>
+        <select id="zquart" data-zquart></select>
+        <div class="zres" data-zres aria-live="polite">Scegli il tuo quartiere per vedere quanto costa la consegna.</div>
+        <div class="zlegend" data-zlegend></div>
+        <p class="znote">Oltre la Zona 3 non effettuiamo consegne: puoi ordinare e ritirare al locale. Il tuo quartiere non c'è o abiti al confine tra due zone? Chiamaci al <a href="tel:+393456811577">345 681 1577</a>.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="ordina">
+  <div class="wrap">
+    <div class="eyebrow" data-reveal><i><b style="background:var(--red)"></b></i>Ritiro e consegna</div>
+    <h2 class="split" data-split>Ordina <em>senza attese</em></h2>
+    <div class="order">
+      <div class="card2" data-reveal>
+        <h3><span data-ico="wa"></span>Ordina su WhatsApp</h3>
+        <p>Il messaggio con l'ordine e il totale si scrive da solo.</p>
+        <ol class="steps"><li><b>1</b>Aggiungi le pizze dal menù</li><li><b>2</b>Scegli ritiro o consegna e l'orario</li><li><b>3</b>Invia su WhatsApp</li></ol>
+        <button class="btn btn-main" data-open><span data-ico="bag"></span>Apri il tuo ordine</button>
+      </div>
+      <div class="card2" data-reveal data-d="1">
+        <h3><span data-ico="scooter"></span>A casa tua</h3>
+        <p>Consegniamo noi, da 2 € in base alla distanza. Nel carrello scegli "Consegna" e scrivi l'indirizzo.</p>
+        <div class="apps"><a class="app" href="#consegna">Vedi le zone e i prezzi <span>→</span></a><a class="app" href="tel:+393456811577">Chiama 345 681 1577 <span>→</span></a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="dove" style="padding-top:20px">
+  <div class="wrap where">
+    <div>
+      <div class="eyebrow" data-reveal><i><b style="background:var(--blue)"></b></i>Dove siamo</div>
+      <h2 class="split" data-split>Via Frejus <em>127/A</em></h2>
+      <div class="info" data-reveal>
+        <div><span data-ico="pin"></span><span><b>Via Frejus 127/A</b><span>10139 Torino (Borgo San Paolo)</span></span></div>
+        <div><span data-ico="clock"></span><span><b>Tutte le sere dalle 18:00</b><span>Fino alle 23:00 · venerdì, sabato e domenica fino alle 23:30</span></span></div>
+        <div><span data-ico="tel"></span><span><b><a href="tel:+393456811577">345 681 1577</a></b><span>Telefono</span></span></div>
+        <div><span data-ico="wa"></span><span><b><a data-wa href="#">347 857 2395</a></b><span>WhatsApp per gli ordini</span></span></div>
+      </div>
+    </div>
+    <a class="mapcard" data-maps href="#" target="_blank" rel="noopener" data-reveal="right" aria-label="Apri in Google Maps">
+      <svg viewBox="0 0 600 400" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+        <rect width="600" height="400" fill="#26348C"/>
+        <g stroke="#3A4AAA" stroke-width="16" fill="none"><path d="M-20 250L640 170"/><path d="M180 -20L260 420"/><path d="M420 -20L470 420"/><path d="M-20 80L640 40"/></g>
+        <g stroke="#31409E" stroke-width="7" fill="none"><path d="M-20 340L640 300"/><path d="M80 -20L120 420"/><path d="M540 -20L580 420"/></g>
+        <text x="40" y="236" transform="rotate(-7 40 236)" font-family="Instrument Sans" font-size="15" font-weight="700" fill="#9AA6E6">VIA FREJUS</text>
+        <g transform="translate(340 190)"><circle r="34" fill="#E0412E" opacity=".2"><animate attributeName="r" values="18;40;18" dur="2.4s" repeatCount="indefinite"/></circle><path d="M0 8s-22-20-22-36a22 22 0 0 1 44 0c0 16-22 36-22 36z" transform="translate(0 -22)" fill="#E0412E"/><circle cy="-50" r="8" fill="#F4C431"/></g>
+      </svg>
+      <span class="go">Apri in Google Maps →</span>
+    </a>
+  </div>
+</section>
+
+<footer><div class="wrap">
+  <span class="brand" data-logo></span>
+  <div>Via Frejus 127/A, Torino · <a href="tel:+393456811577">345 681 1577</a> · WhatsApp <a data-wa href="#">347 857 2395</a></div>
+  <a class="foot-ig" data-ig href="#" target="_blank" rel="noopener"><span data-ico="ig"></span><span data-ig-nome></span></a>
+  <div class="legal" data-legal></div>
+</div></footer>
+
+<nav class="mbar" aria-label="Azioni rapide">
+  <a href="#menu"><span data-ico="bag"></span>Menù</a>
+  <a href="tel:+393456811577"><span data-ico="tel"></span>Chiama</a>
+  <button data-open><span data-ico="wa"></span>Ordine<span class="n" data-count-cart>0</span></button>
+</nav>
+
+<div class="scrim" data-scrim></div>
+<aside class="drawer" data-drawer aria-label="Il tuo ordine">
+  <div class="dr-h"><h3>Il tuo ordine</h3><button data-close aria-label="Chiudi">×</button></div>
+  <div class="dr-b" data-lines></div>
+  <div class="dr-f">
+    <div class="seg" role="group" aria-label="Come vuoi ricevere l'ordine"><button type="button" data-modo="ritiro" aria-pressed="true">Ritiro al locale</button><button type="button" data-modo="consegna" aria-pressed="false">Consegna a casa</button></div>
+    <div class="dom" data-dom hidden>
+      <label>Indirizzo<input data-f="indirizzo" placeholder="Via, numero civico, citofono" autocomplete="street-address"></label>
+      <label>Quartiere<select data-f="zona" data-zsel></select></label>
+      <div class="hint" data-zinfo></div>
+    </div>
+    <div class="row">
+      <label>Nome<input data-f="nome" placeholder="Il tuo nome" autocomplete="given-name"></label>
+      <label><span>Orario <span data-giorno></span></span><select data-f="orario" data-slots></select></label>
+    </div>
+    <label>Note<input data-f="note" placeholder="Es. senza cipolla, tagliata a spicchi"></label>
+    <div class="subrow" data-subrow hidden><span>Consegna</span><span data-fee></span></div>
+    <div class="tot"><span>Totale</span><b data-total>0,00 €</b></div>
+    <button class="btn btn-main" data-send style="justify-content:center"><span data-ico="wa"></span>Invia l'ordine su WhatsApp</button>
+  </div>
+</aside>
+<div class="toast" data-toast></div>
+
+<script src="common.js"></script>
+<script src="zone.js"></script>
+<script src="en.js"></script>
+<script>
+$$("[data-ico]").forEach(e => e.innerHTML = ICON[e.dataset.ico]);
+// logo del volantino, vettorizzato dalla foto
+const LOGO_VERO = (cls = "") => `<svg class="logo-svg ${cls}" viewBox="0 0 469 269" role="img" aria-label="Pizza Napoli"><path fill="currentColor" fill-rule="evenodd" d="M157.0 205.0L156.5 205.8L157.2 221.0L157.5 263.5L158.2 264.2L165.0 264.2L165.5 263.8L164.8 249.8L165.8 248.5L182.5 248.2L184.2 249.0L185.5 251.0L188.5 263.2L189.5 264.0L196.0 264.0L196.2 262.2L195.2 257.0L192.0 246.8L184.8 232.0L179.5 224.5L172.8 217.0L162.8 208.2ZM164.8 220.8L166.0 220.8L171.2 226.0L175.2 231.2L180.5 240.0L179.5 241.5L166.5 241.5L164.8 240.5L164.2 224.2ZM47.8 204.2L47.2 204.8L48.2 227.5L48.8 264.5L49.5 265.2L56.2 265.2L56.8 264.8L55.2 205.0L54.8 204.5ZM11.8 203.8L11.0 204.5L12.8 264.8L13.2 265.2L19.8 265.5L20.8 264.8L20.2 247.2L21.0 246.8L25.2 246.8L28.5 245.8L34.2 243.0L39.8 237.2L42.5 232.2L42.8 223.0L40.8 217.2L38.8 214.0L34.8 210.0L31.2 207.8L22.2 204.5ZM21.0 212.2L25.0 213.0L30.0 215.8L33.8 219.5L35.5 223.2L35.5 229.5L33.8 233.2L29.8 237.0L24.0 239.5L21.2 239.5L19.8 237.2L19.2 214.0ZM317.2 203.2L313.0 205.8L306.5 211.2L299.2 218.8L294.5 224.8L287.2 238.2L284.2 245.8L281.5 254.5L280.5 261.2L281.2 262.8L287.5 263.0L288.0 262.5L290.5 249.2L291.2 247.8L292.8 246.8L310.2 247.0L311.2 248.2L311.2 262.2L311.8 262.8L318.2 262.8L319.0 262.2L317.8 230.8L317.8 203.8ZM310.0 219.0L310.8 219.8L311.0 238.2L309.8 239.8L296.0 239.5L295.2 238.8L295.5 237.0L303.0 225.2L308.8 219.0ZM273.8 202.8L267.2 202.5L266.8 203.0L267.2 223.8L266.8 224.2L265.0 223.2L258.5 215.8L249.8 209.0L242.5 205.5L237.0 203.8L233.8 203.5L233.2 204.0L234.2 262.5L234.8 263.2L241.5 263.5L242.2 262.8L241.0 215.0L241.8 214.2L245.2 215.5L252.5 220.5L257.8 226.0L261.5 231.0L265.0 237.5L267.0 243.0L267.8 254.5L267.5 262.0L268.8 263.0L273.0 263.0L275.2 262.2L274.2 233.2L274.2 203.2ZM109.2 207.8L109.8 211.0L111.5 214.5L120.8 211.0L128.0 209.8L136.0 210.2L138.5 211.0L139.5 212.0L139.5 213.2L110.8 261.2L110.8 263.2L116.0 265.0L125.2 266.8L138.8 266.8L146.2 265.2L152.2 263.2L152.8 261.5L150.5 255.8L143.5 258.2L136.5 259.5L127.5 259.5L125.8 258.5L124.2 258.8L123.0 257.8L124.0 255.0L151.5 208.5L151.5 207.0L142.8 203.8L133.8 202.5L125.2 202.5L118.5 203.8ZM60.5 207.5L60.8 209.8L62.2 213.8L63.2 214.5L69.2 211.8L77.0 210.0L86.2 210.0L90.2 211.2L91.2 212.2L91.2 213.5L77.8 235.8L67.0 254.8L62.0 262.0L62.2 263.8L73.8 266.8L81.8 267.5L94.8 266.8L104.0 263.8L105.0 262.2L102.5 256.5L89.2 260.0L81.5 260.2L76.8 259.2L74.8 257.8L103.8 208.2L103.5 207.2L97.5 204.8L86.5 202.5L76.0 202.5L70.8 203.2ZM323.5 202.2L323.0 204.5L324.2 240.5L324.0 262.0L324.5 262.5L331.0 262.8L331.8 261.8L331.0 245.2L332.0 244.2L337.8 243.2L343.5 240.8L349.0 235.5L352.0 230.5L353.0 227.0L353.0 218.8L349.8 211.5L347.0 208.5L343.2 205.8L339.2 203.8L335.5 202.8ZM331.2 209.8L336.2 210.5L340.5 212.8L343.8 216.0L346.0 221.0L345.8 226.2L343.0 231.8L338.5 235.5L333.2 237.2L331.8 237.2L330.5 235.0L330.2 211.5ZM429.2 199.2L428.5 200.0L429.5 232.5L429.5 259.0L430.8 260.2L454.8 259.8L455.8 259.0L455.5 252.8L455.0 252.2L438.5 252.5L437.0 251.2L436.2 219.5L436.5 200.0L435.0 199.0ZM465.8 198.2L459.5 198.5L458.8 199.2L459.8 258.8L460.5 259.5L467.2 259.5L467.8 259.0L466.8 199.2ZM379.8 199.5L372.8 203.2L369.2 206.0L364.2 211.5L359.5 221.0L358.2 227.0L358.2 234.8L360.2 242.8L364.0 249.8L366.5 252.8L371.5 257.2L377.5 260.8L381.2 262.2L386.8 263.2L397.0 263.0L402.2 261.5L409.0 258.0L416.0 251.5L420.0 245.5L422.2 239.8L423.5 231.8L423.2 224.0L421.8 219.0L418.8 212.8L416.8 210.0L412.2 205.5L404.2 200.5L400.5 199.0L395.5 198.0L387.8 198.0ZM387.2 205.5L396.8 206.0L400.2 207.0L405.2 209.8L411.8 216.0L414.2 220.8L416.2 227.0L416.0 235.8L415.0 239.0L411.2 245.8L405.2 251.5L399.0 254.5L394.0 255.8L388.0 255.8L384.0 255.0L376.0 251.0L372.5 247.8L369.0 243.2L366.8 239.0L365.8 235.5L365.8 225.0L369.8 216.5L375.0 211.0L378.5 208.5ZM436.5 47.5L401.2 48.0L354.2 49.5L318.0 51.5L295.0 51.8L276.5 54.2L216.0 57.8L198.8 60.2L181.8 65.0L178.2 69.0L179.5 72.5L181.0 74.2L187.8 77.2L200.8 80.5L216.8 83.5L259.5 89.5L343.5 98.2L371.5 102.5L374.5 104.2L373.5 105.8L369.5 107.5L362.2 109.0L354.0 109.5L352.2 110.2L317.5 113.0L280.5 114.5L251.5 116.5L231.2 118.8L218.0 121.5L216.5 119.5L216.2 116.2L215.5 115.5L211.5 115.8L209.2 116.8L207.0 116.2L195.5 103.2L195.2 99.2L192.8 100.2L172.5 77.2L172.2 76.5L175.5 70.5L177.8 63.2L177.8 57.2L175.0 51.2L171.2 47.5L165.5 44.5L147.2 43.5L141.2 44.2L139.8 43.2L140.2 42.8L148.2 40.0L181.0 25.2L196.2 20.0L205.2 17.8L215.8 17.5L239.2 23.2L250.0 23.0L261.2 19.8L278.8 11.2L287.5 9.0L295.5 9.2L299.2 10.2L318.0 17.2L340.2 26.8L374.2 37.0L397.8 42.2L404.2 42.5L405.2 41.8L405.2 41.0L404.2 40.2L397.2 39.2L384.8 35.5L382.8 35.5L380.2 34.2L376.2 33.5L353.2 26.0L312.2 8.2L297.8 3.0L291.5 1.5L286.0 1.5L278.8 4.0L264.2 11.5L252.2 15.5L243.5 16.0L236.5 15.2L224.0 12.5L214.5 11.2L201.8 11.8L184.8 17.5L154.2 32.8L139.5 39.2L130.2 42.2L109.0 47.5L95.0 49.8L93.0 51.2L82.0 54.5L64.2 61.5L45.8 71.0L32.2 80.0L25.2 85.8L6.8 103.5L2.2 113.8L1.5 118.0L1.8 127.5L4.0 135.0L6.5 140.0L10.5 145.8L14.5 149.8L19.2 153.2L24.8 156.2L30.0 158.2L38.8 159.0L71.8 164.0L75.2 165.0L111.5 169.8L143.5 174.8L166.5 177.2L175.8 179.0L181.2 179.2L185.0 180.2L192.5 180.8L216.8 184.2L246.5 187.5L254.5 189.0L268.2 190.2L274.5 191.5L275.0 190.5L222.2 132.8L224.5 132.2L228.5 133.8L233.2 134.2L235.8 135.2L253.2 137.5L258.8 137.5L261.0 138.2L281.5 139.5L281.8 138.8L257.5 135.2L227.0 129.8L222.5 129.5L217.5 127.0L216.8 126.0L217.5 124.8L226.5 123.0L240.0 121.5L321.8 118.5L358.5 115.2L373.0 112.5L381.0 110.0L386.0 106.8L386.5 105.8L386.2 103.2L383.5 101.0L374.8 97.5L349.2 91.5L317.8 87.2L259.8 82.5L257.2 81.8L243.5 80.8L230.8 79.2L228.5 78.5L215.0 77.2L193.0 72.8L188.8 70.8L188.2 69.5L189.0 68.8L208.8 65.2L222.0 63.5L224.2 63.8L231.0 62.2L261.5 59.2L292.5 57.2L296.0 56.5L310.2 56.2L323.5 55.0L350.5 53.8L358.5 52.8L391.2 51.5L403.8 49.5L427.0 49.8L435.5 49.2L436.5 48.5ZM23.8 96.5L28.0 95.0L32.8 94.2L38.2 94.2L45.5 95.8L52.0 98.5L57.2 102.0L62.5 107.2L65.0 111.2L68.5 119.8L69.2 124.2L69.0 130.0L67.2 136.2L64.0 142.2L61.5 145.2L55.5 150.2L51.2 152.5L49.8 152.5L46.5 154.0L40.2 154.5L33.2 154.0L28.5 152.5L21.0 148.5L17.0 145.2L12.0 139.5L9.0 134.0L6.8 126.2L6.8 119.2L8.2 112.2L12.5 105.0L16.8 100.8ZM59.2 153.0L62.8 150.8L66.8 146.5L72.0 137.5L85.0 122.2L103.0 105.8L108.8 101.5L123.5 92.2L137.8 85.5L160.0 79.2L169.2 78.5L191.0 101.8L179.0 112.5L172.8 120.5L166.0 133.0L163.2 141.2L169.8 140.2L178.5 137.0L183.0 134.5L187.8 130.2L191.2 126.0L194.0 120.0L195.5 113.5L196.0 107.2L213.5 126.5L199.0 133.5L186.0 142.0L177.0 149.8L167.2 160.2L167.8 160.8L177.2 161.5L186.0 161.0L191.8 159.5L199.2 155.8L203.5 152.0L207.5 147.2L210.2 142.0L214.2 130.8L214.5 139.2L215.8 136.2L216.0 133.0L217.5 132.0L266.2 186.2L264.5 187.0L230.8 181.2L228.0 181.2L226.5 180.5L223.2 180.5L181.5 173.8L176.8 173.5L159.2 170.2L155.8 170.2L142.2 167.5L123.8 164.5L120.2 164.5L113.2 162.8L60.2 154.5ZM174.5 57.8L174.5 63.5L173.2 68.2L170.5 73.2L168.5 75.2L163.0 75.5L161.2 76.2L152.0 77.5L140.0 80.5L127.5 84.5L113.8 90.2L104.0 95.2L93.0 102.0L85.0 107.8L74.0 118.2L72.5 117.2L70.2 111.0L67.0 105.2L61.2 99.0L57.5 96.2L49.5 92.0L44.5 90.5L35.2 89.5L31.5 90.0L30.8 89.2L33.2 86.8L49.2 76.5L73.8 63.8L95.8 55.2L115.5 50.0L139.2 46.8L151.8 46.5L164.0 47.5L169.2 50.2L172.0 53.0Z"/></svg>`;
+$$("[data-logo]").forEach(e => e.innerHTML = LOGO_VERO());
+$("[data-hero-logo]").insertAdjacentHTML("beforeend", LOGO_VERO("big"));
+$$("[data-ig]").forEach(a => a.href = INFO.instagram); $$("[data-ig-nome]").forEach(e => e.textContent = INFO.igNome);
+$("[data-legal]").textContent = `${INFO.ragioneSociale || "[Ragione sociale]"} · P.IVA ${INFO.piva || "[da inserire]"}`;
+/* ---------- disegni a gesso come sull'insegna ---------- */
+const DOODLES = {
+  fetta: '<path pathLength="1" d="M6 12Q32 0 58 12L32 62Z"/><path pathLength="1" d="M9 17Q32 6 55 17"/><circle pathLength="1" cx="26" cy="24" r="5"/><circle pathLength="1" cx="38" cy="30" r="4"/><circle pathLength="1" cx="31" cy="42" r="3.5"/><path pathLength="1" d="M20 32c3-3 7-3 8 1"/>',
+  fungo: '<path pathLength="1" d="M10 32a22 17 0 0 1 44 0z"/><path pathLength="1" d="M24 32v16a8 8 0 0 0 16 0V32"/><circle pathLength="1" cx="24" cy="22" r="3"/><circle pathLength="1" cx="38" cy="19" r="2.5"/>',
+  pomodoro: '<circle pathLength="1" cx="32" cy="32" r="24"/><circle pathLength="1" cx="32" cy="32" r="17"/><path pathLength="1" d="M32 15v34M15 32h34"/><ellipse pathLength="1" cx="24" cy="24" rx="2" ry="3.5"/><ellipse pathLength="1" cx="40" cy="40" rx="2" ry="3.5"/>',
+  rotella: '<circle pathLength="1" cx="22" cy="42" r="16"/><circle pathLength="1" cx="22" cy="42" r="4"/><path pathLength="1" d="M30 30L52 8l6 6-22 22"/><path pathLength="1" d="M10 34l24 16M14 54l16-24"/>',
+  basilico: '<path pathLength="1" d="M8 56C8 26 32 10 58 8 56 34 38 56 8 56Z"/><path pathLength="1" d="M8 56L46 20M22 42l-2-12M30 34l10 2"/>',
+  oliva: '<ellipse pathLength="1" cx="30" cy="34" rx="14" ry="18" transform="rotate(20 30 34)"/><circle pathLength="1" cx="33" cy="30" r="4"/><path pathLength="1" d="M38 16c4-6 10-8 16-6"/>',
+  peperoncino: '<path pathLength="1" d="M14 52c20 2 34-14 34-34 0-4 6-6 8-2 2 20-14 40-40 38z"/><path pathLength="1" d="M50 16c0-6 4-10 8-10"/>',
+  formaggio: '<path pathLength="1" d="M6 44L58 26v24H6z"/><path pathLength="1" d="M6 44l52-18"/><circle pathLength="1" cx="22" cy="46" r="3"/><circle pathLength="1" cx="40" cy="42" r="4"/><circle pathLength="1" cx="48" cy="34" r="2.5"/>'
+};
+const doodle = (k, x, y, s, rot, extra = "") => `<g transform="translate(${x} ${y}) rotate(${rot} ${s / 2} ${s / 2}) scale(${s / 64})" ${extra}>${DOODLES[k]}</g>`;
+// motivo di sfondo
+(function () {
+  const keys = Object.keys(DOODLES), R = rng("insegna"); let g = "";
+  for (let i = 0; i < 9; i++) g += doodle(keys[i % keys.length], (i % 3) * 120 + R() * 30, Math.floor(i / 3) * 120 + R() * 30, 52 + R() * 18, Math.round(R() * 60 - 30));
+  const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="360" height="360" viewBox="0 0 360 360"><g fill="none" stroke="white" stroke-opacity=".07" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">${g}</g></svg>`;
+  document.documentElement.style.setProperty("--doodle", `url("data:image/svg+xml,${encodeURIComponent(svg)}")`);
+  const wave = `<svg xmlns="http://www.w3.org/2000/svg" width="60" height="12" viewBox="0 0 60 12"><path d="M0 8c8 0 10-6 15-6s7 6 15 6 10-6 15-6 7 6 15 6" fill="none" stroke="white" stroke-width="2.4" stroke-linecap="round"/></svg>`;
+  document.documentElement.style.setProperty("--wave", `url("data:image/svg+xml,${encodeURIComponent(wave)}")`);
+})();
+// disegni grandi dell'hero che si tracciano come col gesso
+$("[data-hero-doodles]").innerHTML = [["pomodoro", "90%", "15%", 80, 0], ["fungo", "46%", "11%", 66, 10], ["fetta", "45%", "62%", 110, -14], ["rotella", "88%", "74%", 116, 8], ["basilico", "52%", "86%", 64, -20]]
+  .map(([k, x, y, s, r], i) => `<svg viewBox="0 0 64 64" style="left:${x};top:${y};width:${s}px;height:${s}px;transform:rotate(${r}deg)">${DOODLES[k].replace(/pathLength="1"/g, `pathLength="1" style="animation-delay:${0.6 + i * 0.25}s"`)}</svg>`).join("");
+// lucine sotto l'insegna
+(function () {
+  const W = 1400, n = 10, seg = W / n; let wire = `M0 6`, bulbs = "";
+  for (let i = 0; i < n; i++) {
+    const x0 = i * seg, mid = x0 + seg / 2;
+    wire += ` Q${mid} 46 ${x0 + seg} 6`;
+    [.25, .5, .75].forEach((t, j) => { const x = x0 + seg * t, y = 6 + 40 * 2 * t * (1 - t) * 1; bulbs += `<g transform="translate(${x.toFixed(1)} ${(y + 2).toFixed(1)})"><rect x="-2.5" y="-2" width="5" height="6" rx="1" fill="#2A2F45"/><circle class="bulb" cy="9" r="6" style="animation-delay:${((i * 3 + j) * 0.37 % 2.6).toFixed(2)}s"/></g>`; });
+  }
+  const el = $("[data-lights]"); el.setAttribute("viewBox", `0 0 ${W} 64`); el.setAttribute("preserveAspectRatio", "xMidYMin slice");
+  el.innerHTML = `<path d="${wire}" fill="none" stroke="#1B2033" stroke-width="2"/>${bulbs}`;
+})();
+
+$$("[data-wa]").forEach(a => { a.href = waLink("Ciao Pizza Napoli!"); a.target = "_blank"; a.rel = "noopener"; });
+$("[data-maps]").href = INFO.maps;
+ALL_ITEMS.push({ id: "offerta", n: "Offerta Lory + Coca-Cola in vetro", p: OFFERTA.prezzo });
+
+/* ---------- mosaico come quello del forno ---------- */
+const TESSERE = ["#E0412E", "#3E6FE6", "#F4C431", "#3AA35B", "#F2F0EA", "#1B1B22", "#F08A2B", "#86B6F2", "#B83A8C"];
+function mosaic(w, h, cell, seed, clip) {
+  const R = rng(seed), pts = [];
+  for (let y = 0; y <= h / cell + 1; y++) { pts.push([]); for (let x = 0; x <= w / cell + 1; x++) pts[y].push([x * cell + (R() - .5) * cell * .7, y * cell + (R() - .5) * cell * .7]); }
+  let s = "";
+  for (let y = 0; y < pts.length - 1; y++) for (let x = 0; x < pts[y].length - 1; x++) {
+    const a = pts[y][x], b = pts[y][x + 1], c = pts[y + 1][x + 1], d = pts[y + 1][x];
+    const tri = R() > .5 ? [[a, b, c], [a, c, d]] : [[a, b, d], [b, c, d]];
+    tri.forEach(t => { s += `<polygon points="${t.map(p => p[0].toFixed(1) + "," + p[1].toFixed(1)).join(" ")}" fill="${TESSERE[Math.floor(R() * TESSERE.length)]}"/>`; });
+  }
+  return `<g stroke="#8E8C93" stroke-width="2.2" stroke-linejoin="round"${clip ? ` clip-path="url(#${clip})"` : ""}>${s}</g>`;
+}
+
+// striscia di mosaico sotto l'hero e sulle speciali
+const stripW = 1600;
+$("[data-strip]").setAttribute("viewBox", `0 0 ${stripW} 28`); $("[data-strip]").innerHTML = mosaic(stripW, 28, 22, "striscia");
+
+// F2 · barra di avanzamento a pizza: gli spicchi si riempiono scorrendo
+(function () {
+  let s = `<svg viewBox="-20 -20 40 40"><circle r="19" fill="#1E2A78" stroke="#ffffff55"/>`;
+  for (let i = 0; i < 8; i++) {
+    const a1 = i / 8 * Math.PI * 2, a2 = (i + 1) / 8 * Math.PI * 2;
+    s += `<path class="sl" d="M0 0L${(17 * Math.cos(a1)).toFixed(2)} ${(17 * Math.sin(a1)).toFixed(2)}A17 17 0 0 1 ${(17 * Math.cos(a2)).toFixed(2)} ${(17 * Math.sin(a2)).toFixed(2)}Z" stroke="#1E2A78" stroke-width="1"/>`;
+  }
+  s += `<g class="pep" opacity=".9"><circle cx="7" cy="3" r="2"/><circle cx="-5" cy="7" r="2"/><circle cx="-4" cy="-7" r="2"/><circle cx="6" cy="-8" r="1.6"/></g></svg>`;
+  $("[data-progress]").innerHTML = s;
+  const sl = $$("[data-progress] .sl");
+  const upd = () => { const k = scrollY / Math.max(1, document.documentElement.scrollHeight - innerHeight); const n = Math.round(k * 8); sl.forEach((p, i) => p.classList.toggle("on", i < n)); };
+  addEventListener("scroll", upd, { passive: true }); upd();
+})();
+
+// speciali
+$("[data-al-legend]").innerHTML = Object.entries(ALLERGENI).map(([n, t]) => `<li><i>${n}</i>${t}</li>`).join("");
+$("[data-specials]").innerHTML = SPECIALI.map((s, i) => { const it = findItem(s.id); return `
+  <article class="sp" data-reveal data-d="${i + 1}">
+    <div class="top"><svg class="msc" viewBox="0 0 400 10" preserveAspectRatio="none">${mosaic(400, 10, 14, "sp" + i)}</svg><span class="big">0${i + 1}</span>
+      <div class="ph" data-img="${it.img}" data-pizza="${it.id}" data-alt="${it.n}"></div></div>
+    <div class="bd"><span class="tag">${s.tag}</span><h3>${it.n}</h3><p>${s.frase}</p><div class="ing">${it.d}</div>
+      ${it.al ? `<div class="al"><span>Allergeni</span>${alBadges(it.al)}</div>` : ""}
+      <div class="ft"><span class="pr ${it.p == null ? "tbd" : ""}">${prezzo(it.p)}</span>${it.p == null ? `<span class="soon">Chiedi al banco</span>` : `<button class="btn btn-y" data-add="${it.id}">Aggiungi</button>`}</div></div>
+  </article>`; }).join("");
+
+// F2 · galleria inclinata: scorre da sola e accelera con lo scroll
+const FOTO = [["forno-largo", "Il forno a mosaico"]];
+const PZ = ["napoli", "formaggi-special", "deliziosa", "amalfi", "regina"], PZ2 = ["margherita-dop", "champions", "tradizionale", "zuccotta", "pistacchiosa", "margherita-special"];
+const cardF = ([f, c]) => `<div class="card"><div class="ph" data-img="${f}" data-alt="${c}"></div><span class="cap">${c}</span></div>`;
+const cardP = id => { const it = findItem(id); return `<div class="card pz"><div class="ph" data-img="${it.img}" data-pizza="${it.id}"></div><span class="cap">${it.n}</span></div>`; };
+const r1 = FOTO.map(cardF).join("") + PZ.map(cardP).join(""), r2 = PZ2.map(cardP).join("");
+$("[data-row='1']").innerHTML = r1 + r1; $("[data-row='-1']").innerHTML = r2 + r2;
+(function () {
+  const rows = $$(".grow"); let off = 0, last = scrollY, boost = 0;
+  if (reduceMotion()) return;
+  function tick() {
+    const dy = scrollY - last; last = scrollY; boost = boost * .9 + Math.abs(dy) * .08;
+    off += .5 + boost;
+    rows.forEach(r => { const half = r.scrollWidth / 2; const dir = +r.dataset.row; const x = (off % half); r.style.transform = `translateX(${dir > 0 ? -x : x - half}px)`; });
+    requestAnimationFrame(tick);
+  }
+  requestAnimationFrame(tick);
+})();
+
+// menù a schede
+const cats = [...MENU.slice(0, 3), { id: "componi", n: "Componi" }, ...MENU.slice(3)];
+$("[data-tabs]").innerHTML = cats.map((c, i) => `<button class="tab" role="tab" aria-selected="${i === 0}" data-tab="${c.id}">${c.n}</button>`).join("");
+$("[data-panels]").innerHTML = cats.map((c, i) => {
+  if (c.id === "componi") return `<div class="panel" data-panel="componi"><div class="componi"><div class="big">8 €</div><div><h3 style="font-size:32px">Componi la tua pizza</h3><p style="color:var(--mute)">Parti dalla margherita e scegli i tuoi ingredienti:</p><div class="chips" data-chips></div><button class="btn btn-y" data-add-componi><span data-ico="bag">${ICON.bag}</span>Aggiungi la tua pizza</button></div>
+    <div class="cp-ex"><p>Qualche idea dai nostri clienti:</p><div class="cp-row">${[["componi-1", "Salsiccia e gorgonzola"], ["componi-2", "Verdure grigliate e salsiccia"], ["componi-3", "Patatine"]].map(([f, c]) => `<figure><div class="ph" data-img="${f}" data-alt="${c}"></div><figcaption>${c}</figcaption></figure>`).join("")}</div></div></div></div>`;
+  return `<div class="panel ${i === 0 ? "on" : ""}" data-panel="${c.id}">${c.items.map(it => `
+    <div class="mi ${it.drink ? "mi-drink" : ""}">${it.drink ? (it.img ? `<div class="ph drinkph" data-img="${it.img}" data-alt="${it.n}"></div>` : `<div class="drink">${ICON.bag}</div>`) : `<div class="ph" data-img="${it.img || "x-" + it.id}" data-pizza="${it.id}"></div>`}
+      <div><h4>${it.n}${it.v ? '<span class="veg">VEG</span>' : ""}</h4><div class="d">${it.d}</div>${it.al && it.al.length ? `<div class="al">${alBadges(it.al)}</div>` : ""}
+      <div class="ft"><span class="p ${it.p == null ? "tbd" : ""}">${prezzo(it.p)}</span>${it.p == null ? `<span class="soon">In arrivo</span>` : `<button class="add" data-add="${it.id}" aria-label="Aggiungi ${it.n}">+ Aggiungi</button>`}</div></div>
+    </div>`).join("")}</div>`;
+}).join("");
+$$("[data-tab]").forEach(b => b.onclick = () => {
+  $$("[data-tab]").forEach(x => x.setAttribute("aria-selected", x === b));
+  $$("[data-panel]").forEach(p => p.classList.toggle("on", p.dataset.panel === b.dataset.tab));
+});
+const scelti = new Set();
+$("[data-chips]").innerHTML = COMPONI.ingr.map(x => `<button class="chip" aria-pressed="false">${x}</button>`).join("");
+$$("[data-chips] .chip").forEach(c => c.onclick = () => { const on = c.getAttribute("aria-pressed") !== "true"; c.setAttribute("aria-pressed", on); on ? scelti.add(c.textContent) : scelti.delete(c.textContent); });
+$("[data-add-componi]").onclick = () => {
+  if (!scelti.size) { toast("Scegli almeno un ingrediente"); return; }
+  Cart.add("componi", [...scelti]); scelti.clear(); $$("[data-chips] .chip").forEach(c => c.setAttribute("aria-pressed", false)); toast("Pizza composta aggiunta");
+};
+
+// carrello
+const drawer = $("[data-drawer]"), scrim = $("[data-scrim]");
+const openCart = () => { drawer.classList.add("on"); scrim.classList.add("on"); };
+const closeCart = () => { drawer.classList.remove("on"); scrim.classList.remove("on"); };
+$$("[data-open]").forEach(b => b.onclick = openCart); $("[data-close]").onclick = closeCart; scrim.onclick = closeCart;
+addEventListener("keydown", e => e.key === "Escape" && closeCart());
+document.addEventListener("click", e => {
+  const b = e.target.closest("[data-add]"); if (!b) return;
+  if (Cart.add(b.dataset.add) === false) return;
+  if (b.classList.contains("add")) { b.classList.add("ok"); b.textContent = "✓ Aggiunta"; setTimeout(() => { b.classList.remove("ok"); b.textContent = "+ Aggiungi"; }, 900); }
+  toast(findItem(b.dataset.add).n + " aggiunta");
+});
+let tt; function toast(t) { const el = $("[data-toast]"); el.textContent = t; el.classList.add("on"); clearTimeout(tt); tt = setTimeout(() => el.classList.remove("on"), 1600); }
+const ps = pickupSlots();
+$("[data-giorno]").textContent = ps.giorno ? "(" + ps.giorno + ")" : "";
+$("[data-slots]").innerHTML = `<option value="">Appena possibile</option>` + ps.slots.map(s => `<option>${s}</option>`).join("");
+// ritiro o consegna (prezzo in base alla zona del quartiere)
+let modo = "ritiro";
+const zsel = $("[data-zsel]");
+const qOpts = QUARTIERI_ZONA.map((q, i) => `<option value="${i}">${q.n} · ${euro(ZONE[q.z].costo)}</option>`).join("");
+zsel.innerHTML = `<option value="">Scegli il quartiere</option>` + qOpts + `<option value="altro">Altro / non lo so (costo da confermare)</option>`;
+function setConsegna(i) {
+  const info = $("[data-zinfo]");
+  if (i === "altro") { Cart.consegna = { costo: 0, zona: "quartiere da confermare" }; info.textContent = "Ti confermiamo il costo della consegna su WhatsApp."; }
+  else if (i === "" || i == null) { Cart.consegna = null; info.textContent = ""; }
+  else { const q = QUARTIERI_ZONA[+i], z = ZONE[q.z]; Cart.consegna = { costo: z.costo, zona: `${q.n}, ${z.n}` }; info.textContent = `${q.n} è in ${z.n}: consegna ${euro(z.costo)}`; }
+  Cart.emit();
+}
+zsel.onchange = () => setConsegna(zsel.value);
+function setModo(m) {
+  modo = m;
+  $$("[data-modo]").forEach(b => b.setAttribute("aria-pressed", b.dataset.modo === m));
+  $("[data-dom]").hidden = m !== "consegna";
+  if (m !== "consegna") Cart.consegna = null; else zsel.onchange();
+  Cart.emit();
+}
+$$("[data-modo]").forEach(b => b.onclick = () => setModo(b.dataset.modo));
+
+Cart.on(c => {
+  const dom = modo === "consegna", fee = c.consegna;
+  $("[data-subrow]").hidden = !dom;
+  $("[data-fee]").textContent = !fee ? "scegli la zona" : fee.costo ? euro(fee.costo) : "da confermare";
+  $$("[data-count-cart]").forEach(n => { n.textContent = c.count(); n.classList.remove("bump"); void n.offsetWidth; n.classList.add("bump"); });
+  $("[data-total]").textContent = euro(c.total());
+  $("[data-lines]").innerHTML = c.lines.length ? c.lines.map(l => `<div class="line"><span class="nm">${c.label(l)}</span><span class="lt">${euro(c.lineTotal(l))}</span>
+    <span class="stepper"><button data-q="${l.key}" data-v="-1" aria-label="Togli">−</button><span>${l.qty}</span><button data-q="${l.key}" data-v="1" aria-label="Aggiungi">+</button></span><span style="font-size:13px;color:var(--mute);text-align:right">${prezzo(findItem(l.id).p)} cad.</span></div>`).join("")
+    : `<div class="empty"><div class="pz">${pizzaSVG("vuoto", { base: "r", cheese: 6, top: [["basil", 4]] })}</div>Il tuo ordine è vuoto.<br>Aggiungi le pizze dal menù.</div>`;
+  $$("[data-q]").forEach(b => b.onclick = () => { const l = c.lines.find(x => x.key === b.dataset.q); c.set(l.key, l.qty + +b.dataset.v); });
+});
+Cart.emit(); $$("[data-count-cart]").forEach(n => n.classList.remove("bump"));
+$("[data-send]").onclick = () => {
+  if (!Cart.count()) { toast("Aggiungi almeno una pizza"); return; }
+  const o = { modo, indirizzo: $("[data-f=indirizzo]").value.trim(), nome: $("[data-f=nome]").value.trim(), orario: $("[data-f=orario]").value, note: $("[data-f=note]").value.trim(), giorno: ps.giorno };
+  if (modo === "consegna" && !o.indirizzo) { toast("Scrivi l'indirizzo per la consegna"); $("[data-f=indirizzo]").focus(); return; }
+  if (modo === "consegna" && !Cart.consegna) { toast("Scegli la zona di consegna"); zsel.focus(); return; }
+  const a = document.createElement("a"); a.href = waLink(Cart.message(o)); a.target = "_blank"; a.rel = "noopener"; document.body.append(a); a.click(); a.remove();
+};
+
+// consegna: mappa con le zone e scelta del quartiere
+const zmap = ZoneMap($("[data-map]"), { src: "img/mappa-zone.jpg", focus: [880, 400] });
+$("[data-zlegend]").innerHTML = ZONE.map((z, i) => `<button type="button" data-zl="${i}"><i style="background:${z.col}"></i><span><b>${z.n} · ${z.km}</b><small>${QUARTIERI_ZONA.filter(q => q.z === i).map(q => q.n).join(", ")}</small></span><strong>${euro(z.costo)}</strong></button>`).join("");
+$$("[data-zl]").forEach(b => b.onclick = () => zmap.highlight(+b.dataset.zl));
+const zq = $("[data-zquart]");
+zq.innerHTML = `<option value="">Scegli il tuo quartiere…</option>` + qOpts;
+zq.onchange = () => {
+  if (zq.value === "") { zmap.highlight(null); return; }
+  const q = QUARTIERI_ZONA[+zq.value], z = ZONE[q.z];
+  zmap.highlight(q.z);
+  $("[data-zres]").innerHTML = `<b>${esc(q.n)} · ${z.n}</b><span>Consegna a casa: <strong>${euro(z.costo)}</strong></span><button class="btn btn-main" type="button" data-usa>Ordina con consegna</button>`;
+  $("[data-usa]").onclick = () => { zsel.value = zq.value; setModo("consegna"); openCart(); };
+};
+
+// recensioni
+const slice = `<svg class="slice" viewBox="0 0 24 24"><path d="M12 22L3 5a14 14 0 0 1 18 0z" fill="#F4C431" stroke="#B88F12" stroke-width="1.4"/><path d="M3 5a14 14 0 0 1 18 0l-1.4 2.6a11 11 0 0 0-15.2 0z" fill="#E7A94F"/><circle cx="11" cy="11" r="1.8" fill="#E0412E"/><circle cx="14" cy="15" r="1.4" fill="#E0412E"/></svg>`;
+$("[data-slices]").innerHTML = slice.repeat(5);
+const renderReviews = d => { $("[data-reviews]").innerHTML = d.recensioni.slice(0, 4).map((r, i) => `<div class="rev" data-reveal data-d="${i % 4}"><div class="slices" style="margin-bottom:10px">${slice.repeat(Math.round(r.stelle || 5))}</div><p>${esc(corta(r.testo))}</p><small>${esc(r.autore)}${r.quando ? " · " + esc(r.quando) : ""}${r.tradotta ? " · tradotta da Google" : ""}</small></div>`).join(""); bindReviewStats(d); };
+renderReviews(REVIEW_DATA);
+
+setupPhotos(); setupStatus(); applyLang();
+$$("[data-split]").forEach(el => { splitWords(el); el.setAttribute("data-reveal", ""); });
+setupReveal(); setupNav();
+loadReviews().then(d => { if (d !== REVIEWS_RISERVA) { renderReviews(d); $$("[data-reviews] [data-reveal]").forEach(e => e.classList.add("in")); } });
+</script>
+</body>
+</html>
