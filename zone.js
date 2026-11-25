@@ -38,8 +38,7 @@ function ZoneMap(el, o) {
     <div class="mm-ctrl"><button type="button" data-z="1" aria-label="Ingrandisci">+</button><button type="button" data-z="-1" aria-label="Riduci">−</button><button type="button" data-home aria-label="Vista iniziale">⌖</button></div>
     <div class="mm-hint" aria-hidden="true"></div><span class="mm-attr">© contributori di OpenStreetMap</span>`;
   const stage = el.querySelector(".zm-stage"), hint = el.querySelector(".mm-hint");
-  let s = 1, s0 = 1, tx = 0, ty = 0;
-  const lvls = [1, 1.6, 2.4];
+  let s = 1, s0 = 1, tx = 0, ty = 0, lvls = [1];
   const size = () => [el.clientWidth, el.clientHeight];
   function clamp() {
     const [cw, ch] = size();
@@ -48,11 +47,17 @@ function ZoneMap(el, o) {
   }
   const apply = () => { clamp(); stage.style.transform = `translate(${tx}px,${ty}px) scale(${s})`; };
   function centerOn(x, y) { const [cw, ch] = size(); tx = cw / 2 - x * s; ty = ch / 2 - y * s; apply(); }
-  function home() { const [cw, ch] = size(); s0 = Math.max(cw / W, ch / H) * (cw < 600 ? 1.5 : 1.05); s = s0; centerOn(o.focus[0], o.focus[1]); }
+  // livelli di zoom: mappa intera visibile, mappa che riempie il riquadro, poi due ingrandimenti
+  function home() {
+    const [cw, ch] = size(), fit = Math.min(cw / W, ch / H), fill = Math.max(cw / W, ch / H);
+    s0 = 1; lvls = [...new Set([fit, fill, fill * 1.6, fill * 2.4].map(v => +v.toFixed(4)))];
+    s = fill; centerOn(o.focus[0], o.focus[1]);
+  }
   function zoomBy(dir, px, py) {
-    const cur = lvls.findIndex(l => Math.abs(s / s0 - l) < .01), nx = Math.max(0, Math.min(lvls.length - 1, (cur < 0 ? 0 : cur) + dir));
+    let cur = 0; lvls.forEach((l, k) => { if (Math.abs(s - l) < Math.abs(s - lvls[cur])) cur = k; });
+    const nx = Math.max(0, Math.min(lvls.length - 1, cur + dir));
     const [cw, ch] = size(); px = px ?? cw / 2; py = py ?? ch / 2;
-    const wx = (px - tx) / s, wy = (py - ty) / s; s = s0 * lvls[nx]; tx = px - wx * s; ty = py - wy * s; apply();
+    const wx = (px - tx) / s, wy = (py - ty) / s; s = lvls[nx]; tx = px - wx * s; ty = py - wy * s; apply();
   }
   let ht; const showHint = t => { hint.textContent = t; el.classList.add("mm-hinting"); clearTimeout(ht); ht = setTimeout(() => el.classList.remove("mm-hinting"), 1400); };
   let drag = null;
