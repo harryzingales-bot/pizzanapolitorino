@@ -577,7 +577,7 @@ body{background:var(--sign)}
         <select id="zquart" data-zquart></select>
         <div class="zres" data-zres aria-live="polite">Scegli il tuo quartiere per vedere quanto costa la consegna.</div>
         <div class="zlegend" data-zlegend></div>
-        <p class="znote">Oltre la zona rossa non effettuiamo consegne: puoi ordinare e ritirare al locale. Il tuo quartiere non c'è o abiti al confine tra due zone? Chiamaci al <a href="tel:+393456811577">345 681 1577</a>.</p>
+        <p class="znote">Consegniamo anche fuori dalla zona rossa: il costo della consegna te lo confermiamo in chat o al telefono al <a href="tel:+393456811577">345 681 1577</a>.</p>
       </div>
     </div>
   </div>
@@ -840,10 +840,10 @@ $("[data-slots]").innerHTML = `<option value="">Appena possibile</option>` + ps.
 let modo = "ritiro";
 const zsel = $("[data-zsel]");
 const qOpts = QUARTIERI_ZONA.map((q, i) => `<option value="${i}">${q.n} · ${euro(ZONE[q.z].costo)}</option>`).join("");
-zsel.innerHTML = `<option value="">Scegli il quartiere</option>` + qOpts + `<option value="altro">Altro / non lo so (costo da confermare)</option>`;
+zsel.innerHTML = `<option value="">Scegli il quartiere</option>` + qOpts + `<option value="altro">Fuori zona / non lo so (costo da confermare)</option>`;
 function setConsegna(i) {
   const info = $("[data-zinfo]");
-  if (i === "altro") { Cart.consegna = { costo: 0, zona: "quartiere da confermare" }; info.textContent = "Ti confermiamo il costo della consegna su WhatsApp."; }
+  if (i === "altro") { Cart.consegna = { costo: 0, zona: "quartiere da confermare" }; info.textContent = "Ti confermiamo il costo della consegna in chat o al telefono."; }
   else if (i === "" || i == null) { Cart.consegna = null; info.textContent = ""; }
   else { const q = QUARTIERI_ZONA[+i], z = ZONE[q.z]; Cart.consegna = { costo: z.costo, zona: `${q.n}, ${z.n}` }; info.textContent = `${q.n} è in ${z.n}: consegna ${euro(z.costo)}`; }
   Cart.emit();
@@ -891,9 +891,15 @@ const zmap = ZoneMap($("[data-map]"), { src: "img/mappa-zone.jpg", focus: [880, 
 $("[data-zlegend]").innerHTML = ZONE.map((z, i) => `<button type="button" data-zl="${i}"><i style="background:${z.col}"></i><span><b>${z.n} · ${z.km}</b><small>${QUARTIERI_ZONA.filter(q => q.z === i).map(q => q.n).join(", ")}</small></span><strong>${euro(z.costo)}</strong></button>`).join("");
 $$("[data-zl]").forEach(b => b.onclick = () => zmap.highlight(+b.dataset.zl));
 const zq = $("[data-zquart]");
-zq.innerHTML = `<option value="">Scegli il tuo quartiere…</option>` + qOpts;
+zq.innerHTML = `<option value="">Scegli il tuo quartiere…</option>` + qOpts + `<option value="altro">Fuori dalla zona rossa / non lo so</option>`;
 zq.onchange = () => {
   if (zq.value === "") { zmap.highlight(null); return; }
+  if (zq.value === "altro") {
+    zmap.highlight(null);
+    $("[data-zres]").innerHTML = `<b>Fuori dalle zone</b><span>Consegniamo anche lì: il costo te lo confermiamo in chat o al telefono.</span><button class="btn btn-main" type="button" data-usa>Ordina con consegna</button>`;
+    $("[data-usa]").onclick = () => { zsel.value = "altro"; setModo("consegna"); openCart(); };
+    return;
+  }
   const q = QUARTIERI_ZONA[+zq.value], z = ZONE[q.z];
   zmap.highlight(q.z);
   $("[data-zres]").innerHTML = `<b>${esc(q.n)} · ${z.n}</b><span>Consegna a casa: <strong>${euro(z.costo)}</strong></span><button class="btn btn-main" type="button" data-usa>Ordina con consegna</button>`;

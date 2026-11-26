@@ -5,7 +5,7 @@ const ZONE = [
   { n: "Zona arancione", costo: 3, col: "#F08A2B", km: "da 2 a 4 km" },
   { n: "Zona rossa", costo: 4, col: "#E0412E", km: "oltre 4 km" }
 ];
-// confini di ogni zona (dall'interno verso l'esterno). Oltre la zona rossa non si consegna.
+// confini di ogni zona (dall'interno verso l'esterno). Oltre la zona rossa si consegna con costo da confermare in chat o al telefono.
 const ZONE_BORDI = [
   [[640, 200], [760, 150], [860, 170], [925, 240], [925, 300], [915, 400], [895, 520], [800, 545], [690, 520], [625, 440], [615, 320]],
   [[560, 30], [760, 0], [1130, 0], [1135, 110], [1100, 190], [1110, 300], [1185, 340], [1190, 430], [1170, 560], [1110, 640], [1010, 760], [900, 809], [640, 809], [580, 640], [545, 450], [545, 230]],

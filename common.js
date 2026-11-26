@@ -272,7 +272,7 @@ const Cart = {
       dom && o.indirizzo ? `Indirizzo: ${o.indirizzo}` : null,
       `Orario ${dom ? "di consegna" : "di ritiro"}: ${o.orario ? `${o.giorno} alle ${o.orario}` : "appena possibile"}`,
       o.nome ? `Nome: ${o.nome}` : null, o.note ? `Note: ${o.note}` : null, ``,
-      `Totale: ${euro(this.total())}`, `Pagamento ${dom ? "alla consegna" : "al ritiro"}`].filter(x => x !== null).join("\n").replace(/\n{3,}/g, "\n\n");
+      `Totale: ${euro(this.total())}${dom && this.consegna && !this.consegna.costo ? " + consegna da confermare" : ""}`, `Pagamento ${dom ? "alla consegna" : "al ritiro"}`].filter(x => x !== null).join("\n").replace(/\n{3,}/g, "\n\n");
   }
 };
 
