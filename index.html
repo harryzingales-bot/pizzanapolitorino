@@ -438,6 +438,31 @@ body{background:var(--sign)}
 .zlegend button span{display:grid;gap:2px}.zlegend button small{font-size:12.5px;color:var(--mute);line-height:1.35}
 .zlegend button strong{font-family:var(--head);font-size:18px}
 .znote a{color:var(--yel)}
+[hidden]{display:none!important}
+/* componi come su Glovo */
+.cmp{grid-column:1/-1;min-width:0;grid-template-columns:minmax(0,1fr);background:linear-gradient(120deg,var(--bg3),var(--bg2));border:1px solid var(--line);border-radius:var(--r);padding:28px;display:grid;gap:22px}
+.cmp-h{display:flex;justify-content:space-between;gap:18px;align-items:flex-start}
+.cmp-h h3{font-size:32px}.cmp-h p{color:var(--mute);margin-top:4px}
+.cmp-tot{text-align:right;flex:none}.cmp-tot small{display:block;color:var(--mute);font-size:13px}.cmp-tot b{font-family:var(--head);font-size:44px;font-weight:800;color:var(--yel);line-height:1}
+.cmp-step h4{display:flex;align-items:center;gap:10px;font-size:19px;margin-bottom:12px}
+.cmp-step h4>b{background:var(--yel);color:#1a1a1a;width:28px;height:28px;border-radius:50%;display:grid;place-items:center;font-size:15px;flex:none}
+.cmp-step h4 span{color:var(--mute);font-weight:500;font-size:15px}
+.cmp-basi{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.cmp-basi button{border:1.5px solid var(--line);border-radius:14px;padding:12px 14px;text-align:left;background:rgba(255,255,255,.06);display:grid;gap:2px}
+.cmp-basi button b{font-size:17px}.cmp-basi button small{color:var(--mute);font-size:13px}
+.cmp-basi button[aria-pressed="true"]{background:var(--yel);border-color:var(--yel);color:#1a1a1a}.cmp-basi button[aria-pressed="true"] small{color:#3a3a3a}
+.cmp-g{margin-bottom:14px}.cmp-g h5{font-size:13px;text-transform:uppercase;letter-spacing:.08em;color:var(--mute);margin-bottom:8px}
+.cmp-g .chips{margin:0}
+.chip.ing{display:inline-flex;gap:8px;align-items:baseline}.chip.ing em{font-style:normal;font-size:13px;opacity:.75}
+.cmp-bar{position:sticky;bottom:12px;z-index:5;display:flex;justify-content:space-between;align-items:center;gap:14px;background:var(--sign-d);border:1px solid var(--line);border-radius:16px;padding:10px 10px 10px 18px;box-shadow:0 14px 30px -12px rgba(0,0,0,.7)}
+.cmp-bar>span{font-size:14px;color:var(--mute);overflow:hidden;text-overflow:ellipsis;white-space:nowrap;min-width:0}
+.cmp-bar .btn{flex:none}
+.cmp-al{font-size:13px;color:var(--mute)}
+.paynote{font-size:13px;color:var(--mute);text-align:center;margin:2px 0 8px}.paynote b{color:#fff}
+.tel-only{font-size:13px;background:rgba(244,196,49,.14);border:1px solid rgba(244,196,49,.4);border-radius:12px;padding:10px 12px;margin-bottom:10px}
+.wa-days{font-size:14px;color:var(--mute);margin:-8px 0 18px}.wa-days b{color:#fff}
+@media (max-width:960px){.cmp-bar{bottom:92px}}
+@media (max-width:620px){.cmp{padding:20px 16px}.cmp-h{flex-direction:column}.cmp-tot{text-align:left}.cmp-basi{grid-template-columns:1fr}.cmp-h h3{font-size:28px}}
 </style>
 </head>
 <body id="top">
@@ -552,7 +577,7 @@ body{background:var(--sign)}
         <select id="zquart" data-zquart></select>
         <div class="zres" data-zres aria-live="polite">Scegli il tuo quartiere per vedere quanto costa la consegna.</div>
         <div class="zlegend" data-zlegend></div>
-        <p class="znote">Oltre la Zona 3 non effettuiamo consegne: puoi ordinare e ritirare al locale. Il tuo quartiere non c'è o abiti al confine tra due zone? Chiamaci al <a href="tel:+393456811577">345 681 1577</a>.</p>
+        <p class="znote">Oltre la zona rossa non effettuiamo consegne: puoi ordinare e ritirare al locale. Il tuo quartiere non c'è o abiti al confine tra due zone? Chiamaci al <a href="tel:+393456811577">345 681 1577</a>.</p>
       </div>
     </div>
   </div>
@@ -566,8 +591,10 @@ body{background:var(--sign)}
       <div class="card2" data-reveal>
         <h3><span data-ico="wa"></span>Ordina su WhatsApp</h3>
         <p>Il messaggio con l'ordine e il totale si scrive da solo.</p>
+        <p class="wa-days" data-wa-days><b>WhatsApp dal lunedì al giovedì.</b> Venerdì, sabato e domenica ordini solo per telefono al <a href="tel:+393456811577">345 681 1577</a>.</p>
         <ol class="steps"><li><b>1</b>Aggiungi le pizze dal menù</li><li><b>2</b>Scegli ritiro o consegna e l'orario</li><li><b>3</b>Invia su WhatsApp</li></ol>
         <button class="btn btn-main" data-open><span data-ico="bag"></span>Apri il tuo ordine</button>
+        <p class="paynote" style="text-align:left;margin-top:12px"><b>Pagamento alla consegna o al ritiro</b>, in contanti o con carta.</p>
       </div>
       <div class="card2" data-reveal data-d="1">
         <h3><span data-ico="scooter"></span>A casa tua</h3>
@@ -586,8 +613,8 @@ body{background:var(--sign)}
       <div class="info" data-reveal>
         <div><span data-ico="pin"></span><span><b>Via Frejus 127/A</b><span>10139 Torino (Borgo San Paolo)</span></span></div>
         <div><span data-ico="clock"></span><span><b>Tutte le sere dalle 18:00</b><span>Fino alle 23:00 · venerdì, sabato e domenica fino alle 23:30</span></span></div>
-        <div><span data-ico="tel"></span><span><b><a href="tel:+393456811577">345 681 1577</a></b><span>Telefono</span></span></div>
-        <div><span data-ico="wa"></span><span><b><a data-wa href="#">347 857 2395</a></b><span>WhatsApp per gli ordini</span></span></div>
+        <div><span data-ico="tel"></span><span><b><a href="tel:+393456811577">345 681 1577</a></b><span>Telefono · venerdì, sabato e domenica ordini solo per telefono</span></span></div>
+        <div><span data-ico="wa"></span><span><b><a data-wa href="#">345 681 1577</a></b><span>WhatsApp per gli ordini, dal lunedì al giovedì</span></span></div>
       </div>
     </div>
     <a class="mapcard" data-maps href="#" target="_blank" rel="noopener" data-reveal="right" aria-label="Apri in Google Maps">
@@ -605,7 +632,7 @@ body{background:var(--sign)}
 
 <footer><div class="wrap">
   <span class="brand" data-logo></span>
-  <div>Via Frejus 127/A, Torino · <a href="tel:+393456811577">345 681 1577</a> · WhatsApp <a data-wa href="#">347 857 2395</a></div>
+  <div>Via Frejus 127/A, Torino · <a href="tel:+393456811577">345 681 1577</a> · telefono e WhatsApp</div>
   <a class="foot-ig" data-ig href="#" target="_blank" rel="noopener"><span data-ico="ig"></span><span data-ig-nome></span></a>
   <div class="legal" data-legal></div>
 </div></footer>
@@ -634,7 +661,10 @@ body{background:var(--sign)}
     <label>Note<input data-f="note" placeholder="Es. senza cipolla, tagliata a spicchi"></label>
     <div class="subrow" data-subrow hidden><span>Consegna</span><span data-fee></span></div>
     <div class="tot"><span>Totale</span><b data-total>0,00 €</b></div>
+    <p class="paynote" data-pay><b>Pagamento alla consegna</b>, in contanti o con carta</p>
+    <div class="tel-only" data-telonly hidden>Venerdì, sabato e domenica gli ordini si fanno solo per telefono: tieni aperto questo riepilogo e chiamaci.</div>
     <button class="btn btn-main" data-send style="justify-content:center"><span data-ico="wa"></span>Invia l'ordine su WhatsApp</button>
+    <a class="btn btn-main" data-sendtel href="tel:+393456811577" style="justify-content:center" hidden><span data-ico="tel"></span>Chiama 345 681 1577</a>
   </div>
 </aside>
 <div class="toast" data-toast></div>
@@ -756,7 +786,12 @@ $("[data-row='1']").innerHTML = r1 + r1; $("[data-row='-1']").innerHTML = r2 + r
 const cats = [...MENU.slice(0, 3), { id: "componi", n: "Componi" }, ...MENU.slice(3)];
 $("[data-tabs]").innerHTML = cats.map((c, i) => `<button class="tab" role="tab" aria-selected="${i === 0}" data-tab="${c.id}">${c.n}</button>`).join("");
 $("[data-panels]").innerHTML = cats.map((c, i) => {
-  if (c.id === "componi") return `<div class="panel" data-panel="componi"><div class="componi"><div class="big">8 €</div><div><h3 style="font-size:32px">Componi la tua pizza</h3><p style="color:var(--mute)">Parti dalla margherita e scegli i tuoi ingredienti:</p><div class="chips" data-chips></div><button class="btn btn-y" data-add-componi><span data-ico="bag">${ICON.bag}</span>Aggiungi la tua pizza</button></div>
+  if (c.id === "componi") return `<div class="panel" data-panel="componi"><div class="cmp">
+    <div class="cmp-h"><div><h3>Componi la tua pizza</h3><p>Scegli la base e aggiungi gli ingredienti che vuoi: il prezzo si aggiorna da solo.</p></div><div class="cmp-tot"><small>Totale</small><b data-cmp-tot>7,00 €</b></div></div>
+    <div class="cmp-step"><h4><b>1</b>Scegli la base <span>7 €</span></h4><div class="cmp-basi">${COMPONI.basi.map((b, k) => `<button type="button" data-base="${k}" aria-pressed="${k === 0}"><b>${b.n}</b><small>${b.d}</small></button>`).join("")}</div></div>
+    <div class="cmp-step"><h4><b>2</b>Aggiungi gli ingredienti</h4>${COMPONI.gruppi.map((g, gi) => `<div class="cmp-g"><h5>${g.n}</h5><div class="chips">${g.ingr.map(([n, pr], k) => `<button type="button" class="chip ing" data-ing="${gi}-${k}" aria-pressed="false"><span>${n}</span><em>${pr ? "+" + pr + " €" : "gratis"}</em></button>`).join("")}</div></div>`).join("")}
+      <p class="cmp-al">Allergeni: dipendono dagli ingredienti scelti. Per qualsiasi dubbio chiedi al locale.</p></div>
+    <div class="cmp-bar"><span data-cmp-sel>Margherita</span><button class="btn btn-y" type="button" data-add-componi><span data-ico="bag">${ICON.bag}</span><span>Aggiungi</span> <span data-cmp-tot2>7,00 €</span></button></div>
     <div class="cp-ex"><p>Qualche idea dai nostri clienti:</p><div class="cp-row">${[["componi-1", "Salsiccia e gorgonzola"], ["componi-2", "Verdure grigliate e salsiccia"], ["componi-3", "Patatine"]].map(([f, c]) => `<figure><div class="ph" data-img="${f}" data-alt="${c}"></div><figcaption>${c}</figcaption></figure>`).join("")}</div></div></div></div>`;
   return `<div class="panel ${i === 0 ? "on" : ""}" data-panel="${c.id}">${c.items.map(it => `
     <div class="mi ${it.drink ? "mi-drink" : ""}">${it.drink ? (it.img ? `<div class="ph drinkph" data-img="${it.img}" data-alt="${it.n}"></div>` : `<div class="drink">${ICON.bag}</div>`) : `<div class="ph" data-img="${it.img || "x-" + it.id}" data-pizza="${it.id}"></div>`}
@@ -768,12 +803,21 @@ $$("[data-tab]").forEach(b => b.onclick = () => {
   $$("[data-tab]").forEach(x => x.setAttribute("aria-selected", x === b));
   $$("[data-panel]").forEach(p => p.classList.toggle("on", p.dataset.panel === b.dataset.tab));
 });
-const scelti = new Set();
-$("[data-chips]").innerHTML = COMPONI.ingr.map(x => `<button class="chip" aria-pressed="false">${x}</button>`).join("");
-$$("[data-chips] .chip").forEach(c => c.onclick = () => { const on = c.getAttribute("aria-pressed") !== "true"; c.setAttribute("aria-pressed", on); on ? scelti.add(c.textContent) : scelti.delete(c.textContent); });
+// componi: base + ingredienti
+let cmpBase = 0; const cmpIng = new Set();
+const ingOf = k => { const [g, i] = k.split("-").map(Number); return COMPONI.gruppi[g].ingr[i]; };
+function cmpUpdate() {
+  const sel = [...cmpIng].map(ingOf), tot = COMPONI.p + sel.reduce((t, x) => t + x[1], 0);
+  $("[data-cmp-tot]").textContent = euro(tot); $("[data-cmp-tot2]").textContent = euro(tot);
+  $("[data-cmp-sel]").textContent = COMPONI.basi[cmpBase].n + (sel.length ? " + " + sel.map(x => x[0]).join(", ") : "");
+  return { sel, tot };
+}
+$$("[data-base]").forEach(b => b.onclick = () => { cmpBase = +b.dataset.base; $$("[data-base]").forEach(x => x.setAttribute("aria-pressed", x === b)); cmpUpdate(); });
+$$("[data-ing]").forEach(c => c.onclick = () => { const on = c.getAttribute("aria-pressed") !== "true"; c.setAttribute("aria-pressed", on); on ? cmpIng.add(c.dataset.ing) : cmpIng.delete(c.dataset.ing); cmpUpdate(); });
 $("[data-add-componi]").onclick = () => {
-  if (!scelti.size) { toast("Scegli almeno un ingrediente"); return; }
-  Cart.add("componi", [...scelti]); scelti.clear(); $$("[data-chips] .chip").forEach(c => c.setAttribute("aria-pressed", false)); toast("Pizza composta aggiunta");
+  const { sel, tot } = cmpUpdate();
+  Cart.add("componi", ["base " + COMPONI.basi[cmpBase].n, ...sel.map(x => x[0])], tot);
+  cmpIng.clear(); $$("[data-ing]").forEach(c => c.setAttribute("aria-pressed", false)); cmpUpdate(); toast("Pizza composta aggiunta");
 };
 
 // carrello
@@ -813,15 +857,23 @@ function setModo(m) {
   Cart.emit();
 }
 $$("[data-modo]").forEach(b => b.onclick = () => setModo(b.dataset.modo));
+// WhatsApp solo dal lunedì al giovedì, nel fine settimana solo telefono
+function setGiornoOrdini() {
+  const wa = waOggi();
+  $("[data-send]").hidden = !wa; $("[data-sendtel]").hidden = wa; $("[data-telonly]").hidden = wa;
+  $$("[data-wa-days]").forEach(e => e.hidden = false);
+}
+setGiornoOrdini();
 
 Cart.on(c => {
   const dom = modo === "consegna", fee = c.consegna;
   $("[data-subrow]").hidden = !dom;
+  $("[data-pay]").firstElementChild.textContent = dom ? "Pagamento alla consegna" : "Pagamento al ritiro";
   $("[data-fee]").textContent = !fee ? "scegli la zona" : fee.costo ? euro(fee.costo) : "da confermare";
   $$("[data-count-cart]").forEach(n => { n.textContent = c.count(); n.classList.remove("bump"); void n.offsetWidth; n.classList.add("bump"); });
   $("[data-total]").textContent = euro(c.total());
   $("[data-lines]").innerHTML = c.lines.length ? c.lines.map(l => `<div class="line"><span class="nm">${c.label(l)}</span><span class="lt">${euro(c.lineTotal(l))}</span>
-    <span class="stepper"><button data-q="${l.key}" data-v="-1" aria-label="Togli">−</button><span>${l.qty}</span><button data-q="${l.key}" data-v="1" aria-label="Aggiungi">+</button></span><span style="font-size:13px;color:var(--mute);text-align:right">${prezzo(findItem(l.id).p)} cad.</span></div>`).join("")
+    <span class="stepper"><button data-q="${l.key}" data-v="-1" aria-label="Togli">−</button><span>${l.qty}</span><button data-q="${l.key}" data-v="1" aria-label="Aggiungi">+</button></span><span style="font-size:13px;color:var(--mute);text-align:right">${prezzo(c.unit(l))} cad.</span></div>`).join("")
     : `<div class="empty"><div class="pz">${pizzaSVG("vuoto", { base: "r", cheese: 6, top: [["basil", 4]] })}</div>Il tuo ordine è vuoto.<br>Aggiungi le pizze dal menù.</div>`;
   $$("[data-q]").forEach(b => b.onclick = () => { const l = c.lines.find(x => x.key === b.dataset.q); c.set(l.key, l.qty + +b.dataset.v); });
 });

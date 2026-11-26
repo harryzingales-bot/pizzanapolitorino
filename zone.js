@@ -1,11 +1,11 @@
 /* Pizza Napoli · zone di consegna disegnate sulla mappa (figurative, DA CONFERMARE con Badr)
    Le coordinate sono in pixel dell'immagine img/mappa-zone.jpg (1505 × 809). */
 const ZONE = [
-  { n: "Zona 1", costo: 2, col: "#F4C431", km: "entro 2 km" },
-  { n: "Zona 2", costo: 3, col: "#F08A2B", km: "da 2 a 4 km" },
-  { n: "Zona 3", costo: 4, col: "#E0412E", km: "oltre 4 km" }
+  { n: "Zona gialla", costo: 2, col: "#F4C431", km: "entro 2 km" },
+  { n: "Zona arancione", costo: 3, col: "#F08A2B", km: "da 2 a 4 km" },
+  { n: "Zona rossa", costo: 4, col: "#E0412E", km: "oltre 4 km" }
 ];
-// confini di ogni zona (dall'interno verso l'esterno). Oltre la Zona 3 non si consegna.
+// confini di ogni zona (dall'interno verso l'esterno). Oltre la zona rossa non si consegna.
 const ZONE_BORDI = [
   [[640, 200], [760, 150], [860, 170], [925, 240], [925, 300], [915, 400], [895, 520], [800, 545], [690, 520], [625, 440], [615, 320]],
   [[560, 30], [760, 0], [1130, 0], [1135, 110], [1100, 190], [1110, 300], [1185, 340], [1190, 430], [1170, 560], [1110, 640], [1010, 760], [900, 809], [640, 809], [580, 640], [545, 450], [545, 230]],
@@ -31,7 +31,7 @@ function ZoneMap(el, o) {
     paths += `<path class="zm-zone" data-zi="${i}" d="${d}" fill="${z.col}" fill-rule="evenodd"/>`;
   });
   const lines = ZONE_BORDI.map((p, i) => `<polygon class="zm-line" data-zi="${i}" points="${pts(p)}"/>`).join("");
-  const badges = ZONE.map((z, i) => `<g class="zm-badge" data-zi="${i}" transform="translate(${ZONE_BADGE[i].join(" ")})"><rect x="-92" y="-28" width="184" height="56" rx="28" fill="${z.col}"/><text y="10" text-anchor="middle">${z.n} · ${z.costo} €</text></g>`).join("");
+  const badges = ZONE.map((z, i) => `<g class="zm-badge" data-zi="${i}" transform="translate(${ZONE_BADGE[i].join(" ")})"><rect x="-62" y="-28" width="124" height="56" rx="28" fill="${z.col}"/><text y="10" text-anchor="middle">${z.costo} €</text></g>`).join("");
   const pin = `<g transform="translate(${LOCALE_PX.join(" ")})"><circle r="22" fill="#fff" opacity=".25"/><path d="M0 3c-11-12-17-19-17-26a17 17 0 0 1 34 0c0 7-6 14-17 26z" fill="#E0412E" stroke="#fff" stroke-width="3"/><circle cy="-23" r="6" fill="#fff"/></g>`;
   el.classList.add("zm");
   el.innerHTML = `<div class="zm-stage"><img src="${o.src}" alt="Mappa di Torino con le zone di consegna" draggable="false"><svg viewBox="0 0 ${W} ${H}" aria-hidden="true">${paths}${lines}${badges}${pin}</svg></div>

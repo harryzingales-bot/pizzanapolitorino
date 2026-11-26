@@ -4,7 +4,8 @@ const INFO = {
   nome: "Pizza Napoli",
   indirizzo: "Via Frejus 127/A, 10139 Torino",
   tel: "345 681 1577", telNum: "+393456811577",
-  wa: "347 857 2395", waNum: "393478572395",
+  wa: "345 681 1577", waNum: "393456811577",
+  waGiorni: [1, 2, 3, 4], // WhatsApp solo dal lunedì al giovedì; venerdì, sabato e domenica solo per telefono
   maps: "https://www.google.com/maps/search/?api=1&query=Pizza+Napoli+Via+Frejus+127%2FA+Torino&query_place_id=ChIJ9yak4kdtiEcRpXrp-svs3GU",
   instagram: "https://www.instagram.com/pizzanapoli_via_frejus_127a/", igNome: "@pizzanapoli_via_frejus_127a",
   ragioneSociale: "Pizza Napoli", piva: "13004170018",      // DA INSERIRE: compaiono nel footer
@@ -83,8 +84,8 @@ const MENU = [
     { id: "pepsi", n: "Pepsi", p: 3, d: "in lattina", img: "pepsi", drink: 1 },
     { id: "chinotto", n: "Lurisia Chinotto", p: 3, d: "con chinotto di Savona", img: "lurisia-chinotto", drink: 1 },
     { id: "aranciata", n: "Lurisia Aranciata", p: 3, d: "con arance del Gargano", img: "lurisia-aranciata", drink: 1 },
-    { id: "acqua-nat", n: "Acqua naturale", p: null, d: "Guizza, 0,5 L", img: "acqua-naturale", drink: 1 },
-    { id: "acqua-friz", n: "Acqua frizzante", p: null, d: "Guizza, 0,5 L", img: "acqua-frizzante", drink: 1 }
+    { id: "acqua-nat", n: "Acqua naturale", p: 1.5, d: "Guizza, 0,5 L", img: "acqua-naturale", drink: 1 },
+    { id: "acqua-friz", n: "Acqua frizzante", p: 1.5, d: "Guizza, 0,5 L", img: "acqua-frizzante", drink: 1 }
   ]}
 ];
 // allergeni evidenti: su tutte le pizze glutine e latte, più questi
@@ -97,8 +98,17 @@ const alBadges = al => al && al.length ? `<span class="alb" aria-label="Allergen
 const ALL_ITEMS = MENU.flatMap(c => c.items.map(i => ({ ...i, cat: c.id })));
 const findItem = id => ALL_ITEMS.find(i => i.id === id) || (id === COMPONI.id ? COMPONI : null);
 
-// "Componi la tua pizza a soli 8 €" (dal volantino)
-const COMPONI = { id: "componi", n: "Componi la tua pizza", p: 8, al: [1, 7], ingr: ["Salsiccia", "Funghi", "Gorgonzola", "Tonno", "Verdure grigliate", "Patatine", "Wurstel"] };
+// Componi la tua pizza (come su Glovo): base a 7 € + ingredienti (prezzi dallo scontrino di Badr, 26 nov 2026)
+const COMPONI = { id: "componi", n: "Componi la tua pizza", p: 7, al: [1, 7],
+  basi: [{ id: "margherita", n: "Margherita", d: "pomodoro e fiordilatte" }, { id: "rossa", n: "Rossa", d: "solo pomodoro" }, { id: "bianca", n: "Bianca", d: "fiordilatte, senza pomodoro" }],
+  gruppi: [
+    { n: "Formaggi", ingr: [["Mozzarella", 1], ["Bufala", 2], ["Burrata", 3], ["Stracciatella", 3], ["Scamorza", 1], ["Gorgonzola", 1], ["Parmigiano", 1]] },
+    { n: "Salumi e carne", ingr: [["Prosciutto cotto", 1], ["Prosciutto crudo", 3], ["Salame piccante", 1], ["Salsiccia", 1], ["Wurstel", 1], ["Pancetta", 1], ["Mortadella", 1], ["'Nduja", 1]] },
+    { n: "Verdure", ingr: [["Funghi", 1], ["Patate", 1], ["Pomodorini", 1], ["Pomodorini confit", 1], ["Pomodori secchi", 1], ["Rucola", 1], ["Friarielli", 1], ["Scarola", 1], ["Cipolla", 1], ["Cipolla caramellata", 1], ["Peperoni", 1], ["Melanzane", 1], ["Melanzane grigliate", 1], ["Zucchine", 1], ["Zucchine grigliate", 1], ["Carciofi", 1], ["Olive", 1]] },
+    { n: "Dal mare", ingr: [["Acciughe", 1], ["Tonno", 1]] },
+    { n: "Extra", ingr: [["Pesto", 1], ["Pistacchio", 1], ["Noci", 1], ["Sugo di pomodoro", 1], ["Aglio", 1]] }
+  ] };
+const waOggi = (d = new Date()) => INFO.waGiorni.includes(d.getDay());
 
 // Le 3 pizze speciali a rotazione: cambiare solo id e frase
 const SPECIALI = [
@@ -239,17 +249,18 @@ const Cart = {
   lines: [], subs: [],
   on(f) { this.subs.push(f); },
   emit() { this.subs.forEach(f => f(this)); },
-  add(id, extra) {
+  add(id, extra, p) {
     const it = findItem(id); if (!it || it.p == null) return false;
     const key = id + (extra ? ":" + extra.join(",") : "");
     const same = this.lines.find(l => l.key === key);
-    if (same) same.qty++; else this.lines.push({ key, id, qty: 1, extra: extra || null });
+    if (same) same.qty++; else this.lines.push({ key, id, qty: 1, extra: extra || null, p: p == null ? null : p });
     this.emit(); return true;
   },
   consegna: null, // { costo, zona } se il cliente sceglie la consegna
   set(key, qty) { const l = this.lines.find(x => x.key === key); if (!l) return; l.qty = qty; if (qty <= 0) this.lines = this.lines.filter(x => x !== l); this.emit(); },
   count() { return this.lines.reduce((s, l) => s + l.qty, 0); },
-  lineTotal(l) { return findItem(l.id).p * l.qty; },
+  unit(l) { return l.p != null ? l.p : findItem(l.id).p; },
+  lineTotal(l) { return this.unit(l) * l.qty; },
   subtotal() { return this.lines.reduce((s, l) => s + this.lineTotal(l), 0); },
   total() { return this.subtotal() + (this.consegna && this.consegna.costo ? this.consegna.costo : 0); },
   label(l) { const it = findItem(l.id); return it.n + (l.extra ? ` (${l.extra.join(", ").toLowerCase()})` : ""); },
@@ -261,7 +272,7 @@ const Cart = {
       dom && o.indirizzo ? `Indirizzo: ${o.indirizzo}` : null,
       `Orario ${dom ? "di consegna" : "di ritiro"}: ${o.orario ? `${o.giorno} alle ${o.orario}` : "appena possibile"}`,
       o.nome ? `Nome: ${o.nome}` : null, o.note ? `Note: ${o.note}` : null, ``,
-      `Totale: ${euro(this.total())}`].filter(x => x !== null).join("\n").replace(/\n{3,}/g, "\n\n");
+      `Totale: ${euro(this.total())}`, `Pagamento ${dom ? "alla consegna" : "al ritiro"}`].filter(x => x !== null).join("\n").replace(/\n{3,}/g, "\n\n");
   }
 };
 
